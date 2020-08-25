@@ -35,7 +35,7 @@ To enable some recommended features, an optional OpenSSH client needs to be inst
     - Open properties and set it to automatically start
     - Click `apply` and `start` 
 
-![](figs/ssh/openssh_client.png)
+![](../figs/ssh/openssh_client.png)
 
 ## Share Windows Wi-Fi
 
@@ -49,7 +49,7 @@ This is possible on most modern Windows 10 computers.
   - Password: `jetbot-password<group-number>`
 - Click to share connection
 - The jetbot is already set up to look for this hotspot name and will connect automatically after some time
-- When the connection is established, it can bee seen in the Mobile Hotspot list of connected devices: ![](figs/wifi/mobileHotspotConnected.png)
+- When the connection is established, it can bee seen in the Mobile Hotspot list of connected devices: ![](../figs/wifi/mobileHotspotConnected.png)
 - The jetbot should now have internet connectivity which is needed for our setup
 
 ## Visual Studio Code Remote Developement
@@ -79,7 +79,7 @@ Inside VSCode you can open a folder using the bar on the left side.
 A terminal window can be opened with maybe `[CTRL + J]` depending on system. 
 Check the keyboard shortcut preferences for `Toggle integrated terminal`.
 
-![](figs/ssh/vscode_ssh.png)
+![](../figs/ssh/vscode_ssh.png)
 
 ## Safe shutdown of Jetbot
 
