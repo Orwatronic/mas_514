@@ -11,6 +11,7 @@ Welcome to MAS507's documentation!
    :caption: Contents:
 
    src/start
+   src/report
    src/ros
 
 Indices and tables

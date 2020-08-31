@@ -1,17 +1,15 @@
 # Getting Started
+This repository contains software and code examples for the Jetbot hardware which is supposed to be used in the MAS507 course.
 
-MAS507 repository for software to run on Jetbot. 
+The documentation will sometimes refer to your group number (`<group-number>`, Jetbot number). This text is then supposed to be replaced with your group number or more precisely, your jetbot id.
 
-For installing software on Windows client to use the Jetbot, please see the instructions below.
-
-Note that your group number (`<group-number>`, Jetbot number) is needed for the setup.
-
-The Ubuntu user is `jetbot` and the password is `jetbot`.
+All Jetbots have the same login credentials which is:
+- Username: `jetbot`
+- Password: `jetbot`
 
 ## Client communication
-
-The Linux operating system on the Jetbot can be used and operated using only a terminal (text input and output). 
-You can update system files, edit files directly in terminal, and run code.
+The Linux operating system on the Jetbot can be used and operated using only the terminal (text input and output).
+You can update system files, edit files directly in terminal, and run code, all from the mighty terminal in Linux.
 
 SSH is an abbreviation for "Secure SHell" and allows for opening such a terminal session on a remote host.
 This means you can use a Windows computer to operate a Linux system using text input.
@@ -21,7 +19,6 @@ This editor is fast, lightweight and has good color-coding for Python code.
 You can also open SSH terminals inside VSCode. 
 
 ## Enable OpenSSH Client Feature in Windows 10
-
 Windows 10 does not have good SSH capabilities by default.
 To enable some recommended features, an optional OpenSSH client needs to be installed in Windows 10:
 - Be logged in as an administrator
@@ -38,7 +35,6 @@ To enable some recommended features, an optional OpenSSH client needs to be inst
 ![](../figs/ssh/openssh_client.png)
 
 ## Share Windows Wi-Fi
-
 The Jetbot will get internet from a Windows computer by sharing over WiFi. 
 This is possible on most modern Windows 10 computers.
 
@@ -53,7 +49,6 @@ This is possible on most modern Windows 10 computers.
 - The jetbot should now have internet connectivity which is needed for our setup
 
 ## Visual Studio Code Remote Developement
-
 [Download](https://aka.ms/win32-x64-user-stable) and install VSCode. 
 Default installation is alright. 
 
@@ -82,7 +77,6 @@ Check the keyboard shortcut preferences for `Toggle integrated terminal`.
 ![](../figs/ssh/vscode_ssh.png)
 
 ## Safe shutdown of Jetbot
-
 To avoid corrupting files, you should shut down the Jetbot through the terminal.
 If there is power loss while the system is running, important system files may get corrupted.
 It should be noted that that SD card is not encrypted, and it should be possible to extract user files even if the Ubuntu OS won't boot anymore.

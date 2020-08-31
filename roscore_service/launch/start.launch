@@ -1,0 +1,4 @@
+<launch>
+    <param name="/counter_publisher_rate" type="int" value="5" />
+    <node name="counter_publisher" pkg="roscore_service" type="counter.py" output="screen"/>
+</launch>
