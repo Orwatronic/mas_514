@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to MAS507's documentation!
-==================================
+MAS507 - Product Development and Project Management
+===================================================
 
 .. toctree::
    :maxdepth: 2
@@ -14,9 +14,9 @@ Welcome to MAS507's documentation!
    src/report
    src/ros
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
