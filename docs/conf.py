@@ -26,8 +26,6 @@ author = 'Andreas Klausen and Sondre Sanden Tørdal'
 # The full version, including alpha/beta/rc tags
 release = re.sub('^v', '', os.popen('git describe').read().strip())
 
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
