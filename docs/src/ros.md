@@ -12,8 +12,8 @@ This will create a folder named `mas507` and hence the source files are now avai
 
 The `catkin_make` command will build all the dependencies and convert source code to binary code if needed e.g. for C/C++ code. After that the source ROS package is installed, the ROS package `mas507` is now ready to be launched.
 
-### Rosbridge Server
-If the Roslaunch fails, it might be that the [Rosbridge](http://wiki.ros.org/rosbridge_suite) is not installed. If so please install it by executing:
+To use WebViz, the [Rosbridge](http://wiki.ros.org/rosbridge_suite) package has to be installed on your Jetbot. Execute the following commands to install it:
+- `sudo apt-get update && sudo apt-get upgrade`
 - `sudo apt-get install ros-melodic-rosbridge-server`
 
 ## Start ROS Core
