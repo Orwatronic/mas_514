@@ -14,6 +14,11 @@ Sphinx and CI/CD
 To get started with the report, the easiest way to get up to speed is to simply fork the MAS507 repository on GitLab and clone it to your a folder in your computer. Follow the steps below to set up your computer:
 
 #.  Download and install Git from: https://git-scm.com/download
+
+    * Open Command Prompt and configure Git globally on your computer:
+    * ``git config --global user.name "John Doe"``
+    * ``git config --global user.email "john.doe@mail.com"``
+
 #.  Create a GitLab user on https://gitlab.com
 #.  Your Merge master visits https://gitlab.com/uia-mekatronikk/mas507 and forks the course repo from your GitLab account.
 #.  Merge master invites the other group members to the mas507 repo. 
