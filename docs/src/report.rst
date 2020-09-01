@@ -15,12 +15,13 @@ To get started with the report, the easiest way to get up to speed is to simply 
 
 #.  Download and install Git from: https://git-scm.com/download
 #.  Create a GitLab user on https://gitlab.com
-#.  Visit https://gitlab.com/uia-mekatronikk/mas507 and fork the course repo from your GitLab account.
-#.  Clone your repo to your own computer in a non-synced folder (e.g. Dropbox, Google Drive) executing: ``git clone https://gitlab.com/<your-gitlab-username>/mas507`` inside the destination folder e.g. ``C:\GitLab\``.
+#.  Your Merge master visits https://gitlab.com/uia-mekatronikk/mas507 and forks the course repo from your GitLab account.
+#.  Merge master invites the other group members to the mas507 repo. 
+#.  All group members clones the repo to their own computers in a non-synced folder (e.g. Dropbox, Google Drive) executing: ``git clone https://gitlab.com/<merge-master-username>/mas507`` inside the destination folder e.g. ``C:\GitLab\``.
 #. Open ``C:\GitLab\mas507`` folder in Visual Studio Code and try to edit the ``C:\GitLab\mas507\docs\src\ros.md`` by writing your name in it for example.
 #. Commit the changes by ``git add -A`` followed by a commit ``git commit -m "Test commit from my local computer"``.
 #. After the commit, the changes shall be pushed to GitLab using ``git push``
-#. This will start the CI/CD Process on your GitLab account and after about a minute your very own webpage shall appear on ``https://<your-gitlab-username>.gitlab.io/mas507``
+#. This will start the CI/CD Process on your GitLab account and after about a minute your very own webpage shall appear on ``https://<merge-master-username>.gitlab.io/mas507``
 #. Congrats, your first webpage made with Sphinx is now online as a result of using DevOps CI/CD methods!
 
 Please notice that the recipe for the automatic build executed by GitLab is described by the GitLab runner file ``.gitlab-ci.yml`` found the root folder of the MAS507 repo. 

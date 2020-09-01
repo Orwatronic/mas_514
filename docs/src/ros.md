@@ -10,7 +10,7 @@ This will create a folder named `mas507` and hence the source files are now avai
 The `catkin_make` command will build all the dependencies and convert source code to binary code if needed e.g. for C/C++ code. After that the source ROS package is installed, the ROS package `mas507` is now ready to be launched.
 
 ## Start ROS Core
-Before launching the ROS package we just installed, the ROS core has to be running on our Jetbot. To start the ROS Core, execute the following command in your terminal:
+Before launching the ROS package we just installed, the ROS core has to be running on our Jetbot. To start the ROS Core, executer the following command in your terminal:
 - `roscore`
 
 The terminal window is now occupied and is not available for other inputs, which is why a new terminal window is opened by splitting the terminal in VS Code by clicking the button marked with a red square.
