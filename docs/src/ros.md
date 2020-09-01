@@ -1,7 +1,10 @@
 # ROS Package
+## Connect to Your Jetbot
+All the following steps are supposed to be carried out on your Jetbot Hardware using Visual Studio Code and SSH as done in the first exercise.
+
 ## Install
 All ROS packages contains a `CMakeLists.txt` and a `package.xml` which is the definition of the ROS package. These files are located in the `root` folder. The installation of  ros package is carried out by cloning this repository to the `~/catkin_ws/src/` directory by executing:
-- `git clone https://gitlab.com/<your-gitlab-username>/mas507` inside the `~/catkin_ws/src/` folder.
+- `git clone https://gitlab.com/<merge-master-username>/mas507` inside the `~/catkin_ws/src/` folder.
 
 This will create a folder named `mas507` and hence the source files are now available for the ROS environment to be installed as:
 - `cd ~/catkin_ws`
