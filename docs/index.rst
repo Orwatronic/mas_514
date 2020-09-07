@@ -16,7 +16,7 @@ MAS507 - Product Development and Project Management
    src/start
    src/report
    src/ros
-   src/vision
+   src/calibration
    src/troubleshooting
 
 .. Indices and tables
