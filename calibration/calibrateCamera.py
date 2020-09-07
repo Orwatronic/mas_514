@@ -1,8 +1,4 @@
-# Code for saving images for calibration purposes
-# Press space on opened window to save image
-# Images are overwritten in the folder
-
-#%% Imports
+# Imports
 import cv2
 import pathlib
 import numpy as np

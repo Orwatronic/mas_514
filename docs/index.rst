@@ -6,6 +6,9 @@
 MAS507 - Product Development and Project Management
 ===================================================
 
+.. image:: ./figs/jetbot.jpg
+   :width: 15cm
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -13,6 +16,7 @@ MAS507 - Product Development and Project Management
    src/start
    src/report
    src/ros
+   src/vision
 
 .. Indices and tables
 .. ==================

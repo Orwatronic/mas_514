@@ -3,6 +3,7 @@
 Node for saving Raw Jetbot images
 """
 import os
+import glob
 import rospy
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
@@ -13,12 +14,20 @@ class ImageSaver(object):
     idx = 0
 
     def __init__(self):
-        self.imagePath = '%s/catkin_ws/src/mas507/temp/' % (os.path.expanduser("~"))
+        self.imagePath = '%s/catkin_ws/src/mas507/calibration/images/' % (os.path.expanduser("~"))
         self.cvBridge = CvBridge()
 
-        # Ensure folder exist and create folder if non-existing
+        
         if not os.path.isdir(self.imagePath):
+            # Ensure folder exist and create folder if non-existing
             os.mkdir(self.imagePath)
+
+        else:
+            # Delete content if folder exist
+            files = glob.glob(self.imagePath)
+            for f in files:
+                os.remove(f)
+
 
     def callback(self, msg):
         if msg.data:
