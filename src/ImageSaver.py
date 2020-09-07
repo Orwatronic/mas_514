@@ -13,7 +13,7 @@ class ImageSaver(object):
     idx = 0
 
     def __init__(self):
-        self.imagePath = '%s/catkin_ws/src/temp/' % (os.path.expanduser("~"))
+        self.imagePath = '%s/catkin_ws/src/mas507/temp/' % (os.path.expanduser("~"))
         self.cvBridge = CvBridge()
 
         # Ensure folder exist and create folder if non-existing
@@ -22,8 +22,6 @@ class ImageSaver(object):
 
     def callback(self, msg):
         if msg.data:
-            
-
             # Read RAW image
             image = rospy.wait_for_message('/image_raw', Image)
 

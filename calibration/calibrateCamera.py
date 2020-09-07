@@ -8,7 +8,7 @@ import pathlib
 import numpy as np
 
 # Set a folder for saving images
-imageLocation = pathlib.Path("./intrinsicImages")
+imageLocation = pathlib.Path("./images")
 
 # Shape of chessboard
 sh1 = 6
