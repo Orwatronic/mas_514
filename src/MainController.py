@@ -20,8 +20,8 @@ if __name__ == '__main__':
         while not rospy.is_shutdown():
             servoSetpoints = ServoSetpoints()
 
-            servoSetpoints.leftWheel = 330
-            servoSetpoints.rightWheel = 330 + 0*40*np.sin(0.1*2*np.pi*t)
+            servoSetpoints.leftWheel = 308
+            servoSetpoints.rightWheel = 308 + 0*40*np.sin(0.1*2*np.pi*t)
             pub_servoSetpoints.publish(servoSetpoints)
 
             t = t + 0.1

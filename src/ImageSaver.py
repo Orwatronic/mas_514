@@ -24,9 +24,10 @@ class ImageSaver(object):
 
         else:
             # Delete content if folder exist
-            files = glob.glob(self.imagePath)
+            files = os.listdir(self.imagePath)
+
             for f in files:
-                os.remove(f)
+                os.remove(os.path.join(self.imagePath, f))
 
 
     def callback(self, msg):
