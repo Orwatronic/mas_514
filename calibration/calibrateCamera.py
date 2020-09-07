@@ -43,5 +43,5 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(
 )
 
 # Save calibration data
-calibrationPath = imageLocation.joinpath("calibrationParameters.npz")
+calibrationPath = imageLocation.joinpath("intrinsicCalibration.npz")
 np.savez(str(calibrationPath), mtx=mtx, dist=dist, rvecs=rvecs, tvecs=tvecs)

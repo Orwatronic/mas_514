@@ -20,5 +20,15 @@ The calibration is done by executing the calibration Python script inside the :c
 
 This script will save the calibration data to a :code:`.npz` file which will be loaded by the ImageProcessing node later on to rectify the raw image captured by the camera. 
 
+Rectification
+-------------
+The next step is to rectify the image, which is carried out in the :code:`JetbotCamera` node. Before restarting the MAS507 package, please copy or move the :code:`intrinsicCalibration.npz` file from :code:`~/catkin_ws/src/mas507/calibration/` to :code:`~/catkin_ws/src/mas507/data/` and launch the package using :code:`roslaunch mas507 start.launch`.
+
+The raw image and the calibrated image can now be inspected using the WebViz application.
+
+Color Calibration
+-----------------
+The image is also color calibrated, but this step is not supposed to be changed by the students since the lecturer have already ensured that all the Jetbot cameras has been calibrated for possible color distortions. The color calibration procedure is seen also in the :code:`JetbotCamera` node, where the color calibration matrix is loaded from :code:`colorCalibration.npz` also found in the :code:`~/catkin_ws/src/mas507/data/` folder. For more information about the color calibration procedure, please check out :download:`this lecture on color calibration <../pdfs/Lec3_colorCalibration.pdf>`.
+
 
 
