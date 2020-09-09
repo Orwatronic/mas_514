@@ -9,6 +9,10 @@ Sphinx support both Markdown and reStructuredText to format the pages, hence a b
 
 To write Math, reStructuredText is preferred since it is very hard to get math working in Markdown using Sphinx unfortunately. However, reStructuredText is in the end more complete if compared to Markdown, which is why reStructuredText should be your first option to write the report using Sphinx.
 
+Sphinx Style guide
+------------------
+This webpage contains a nice overview of the Sphinx styles and syntax: https://documentation-style-guide-sphinx.readthedocs.io/en/latest/index.html
+
 Sphinx and CI/CD
 -------------------------------------
 To get started with the report, the easiest way to get up to speed is to simply fork the MAS507 repository on GitLab and clone it to your a folder in your computer. Follow the steps below to set up your computer:
