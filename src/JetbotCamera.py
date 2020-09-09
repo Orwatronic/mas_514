@@ -138,7 +138,7 @@ if __name__ == '__main__':
 
             # Detect Aruco markers
             cv_gray = cv2.cvtColor(cv_calibrated, cv2.COLOR_BGR2GRAY)
-            aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
+            aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
             parameters = aruco.DetectorParameters_create()
             corners, ids, rejectedImgPoints = aruco.detectMarkers(
                 cv_gray, aruco_dict, parameters=parameters

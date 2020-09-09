@@ -3,7 +3,7 @@ from cv2 import aruco
 import matplotlib.pyplot as plt
 
 # Select Aruco dictionary
-aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
+aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
 
 # Create markers
 for i in range(0, 3):

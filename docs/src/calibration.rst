@@ -1,5 +1,5 @@
-Vision
-======
+Camera Calibration
+==================
 
 The Jetbot camera is supposed to be used to detect both the Aruco markers for navigating and the strawberries to pick with the developed robot arm. It is therefore crucial to calibrate the camera before starting to develop the image processing functionality. The calibration is carried out in 3 major steps.
 
