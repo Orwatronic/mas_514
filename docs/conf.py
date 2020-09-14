@@ -33,7 +33,8 @@ version = re.sub('^v', '', os.popen('git describe').read().strip())
 # ones.
 extensions = [
     'recommonmark',
-    'sphinx_rtd_theme'
+    'sphinx_rtd_theme',
+    'sphinxcontrib.bibtex'
 ]
 
 # Handle both ReST and Markdown files
