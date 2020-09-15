@@ -146,6 +146,30 @@ if __name__ == '__main__':
 
             # Print Aruco marker detection onto image
             cv_markers = aruco.drawDetectedMarkers(cv_calibrated.copy(), corners, ids)
+
+            # Calculate Aruco marker pose
+            marker_size = 0.11 # in meters
+            rvecs, tvecs, trash = aruco.estimatePoseSingleMarkers(
+                corners, marker_size, camera.calibration_matrix, camera.distortion_parameters
+            )
+
+            # Print coordinate system onto markers
+            if ids is not None:
+                for i in range(0, len(ids)):
+                    cv_markers = aruco.drawAxis(
+                        cv_markers,
+                        camera.calibration_matrix,
+                        camera.distortion_parameters,
+                        rvecs[i],
+                        tvecs[i],
+                        marker_size/2
+                    )
+                    
+                    # Convert to rotation matrix in SO(3)
+                    R, jacobian = cv2.Rodrigues(rvecs[i])
+
+                    print('x={}, y={}, z={}'.format(tvecs[i][0,0], tvecs[i][0,1], tvecs[i][0,2]))
+                    
             
             # Publish images to ROS messages
             pub_raw.publish(bridge.cv2_to_imgmsg(cv_raw, "bgr8"))        
