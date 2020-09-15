@@ -17,7 +17,6 @@ MAS507 - Product Development and Project Management
    src/report
    src/ros
    src/calibration
-   src/kinematics
    src/git
    src/demos
    src/troubleshooting
