@@ -54,3 +54,20 @@ Since ROS is only running the black terminal, it is hard to se what's going on u
 NOTE: To make WebViz work, ensure that the feature for loading insecure pages is allowed e.g. in Chrome:
 ![](../figs/webviz/loadUnsafeWebpageChrome.png)
 
+### If in a remote location with bad internet speed
+If you are situated in a remote location with bad internet connection, WebViz has proven to perform bad due to the need of sending packages from the Jetbot to a remote webserver hosting the WebViz app. An alternative approach is therefore suggested to have a higher refresh rate of the camera stream. Follow the following steps to use the alternative method:
+
+- Open the launch script found in `*/mas507/launch/start.launch`
+- Comment out/remove the following section in launch script:
+    ```
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+        <arg name="port" value="9090"/>
+    </include>
+    ``` 
+- If not already existing, add the following line to the launch script:
+    ```
+    <node name="node_web_video_server" pkg="web_video_server" type="web_video_server"/>
+    ```
+- Launch the MAS507 package by `roslaunch mas507 start.launch`
+- Visit `http://jetbot-desktop<group-number>:8080` on the laptop which the Jetbot is connected to via  the mobile hotspot.
+- Select the desired image topic from the list and the video stream can be seen in real-time.
