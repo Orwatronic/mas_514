@@ -201,10 +201,11 @@ Python Implementation
 =====================
 
 .. code-block:: python
-    :linenos:
 
     from src import math3d
     import numpy as np
+
+    # math3d library is found in */mas507/src/math3d.py
 
     # Static DH Parameters
     d1 = 2
