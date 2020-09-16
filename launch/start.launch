@@ -3,8 +3,9 @@
     <node name="ImageSaver" pkg="mas507" type="ImageSaver.py" output="screen"/>
     <node name="JetbotController" pkg="mas507" type="JetbotController.py" output="screen"/>
     <node name="MainController" pkg="mas507" type="MainController.py" output="screen"/>
+    <node name="WebController" pkg="mas507" type="WebController.py" output="screen"/>
     <node name="node_web_video_server" pkg="web_video_server" type="web_video_server"/>
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+    <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
         <arg name="port" value="9090"/>
-    </include>
+    </include> -->
 </launch>

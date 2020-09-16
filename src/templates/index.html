@@ -8,12 +8,12 @@
             overflow    : hidden;
             padding     : 0;
             margin      : 0;
-            background-color: #BBB;
+            background-color: rgb(0,0,0);
             background-image: url('video_feed');
             /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: contain;
         }
 
         #left {
@@ -124,7 +124,7 @@
                 console.log(sendJoystickL_xDist, sendJoystickL_yDist);                 
 
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', "./DCmotor?x_dist=" + (sendJoystickL_xDist) + '&y_dist=' + (sendJoystickL_yDist))
+                xhr.open('GET', "./left_stick?x=" + (sendJoystickL_xDist) + '&y=' + (sendJoystickL_yDist))
                 xhr.send();
             }
 
@@ -134,10 +134,10 @@
                 console.log(sendJoystickR_xDist, sendJoystickR_yDist);                 
 
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', "./ServoMotor?x_dist=" + (sendJoystickR_xDist) + '&y_dist=' + (sendJoystickR_yDist))
+                xhr.open('GET', "./right_stick?x=" + (sendJoystickR_xDist) + '&y=' + (sendJoystickR_yDist))
                 xhr.send();
             }
-
+    
         }, 100);
 
     </script>
