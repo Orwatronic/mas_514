@@ -86,6 +86,7 @@ def right_stick():
 
 if __name__ == '__main__':
     # Run Flask app
+    wifi_ip = '192.168.137.91'
     app.run(host='0.0.0.0', port=8000, debug=True, use_reloader=False)
     
 
