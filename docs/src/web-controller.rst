@@ -1,6 +1,6 @@
-##############
-Web Controller
-##############
+####################
+Flask Web Controller
+####################
 
 .. figure:: ../figs/webapp/screenshot1.png
     :figclass: align-center
@@ -12,6 +12,10 @@ This guide will explain the required steps to install the web controller feature
 *******************************
 Create WiFi Hotspot from Jetbot
 *******************************
+
+In order to achieve sufficient response when using the Web Controller from your smartphone or tablet, it is recommended to configure the Jetbot to host its own hotspot as a system service. The default hotspot service in Ubuntu currently does not allow to be hosted on the same wlan interface while the Jetbot is already connected to a WiFi network (which is the case for us where the Jetbot is connected to yout laptop WiFi hotspot). 
+
+It is therefore needed to install some additional software named :code:`linux-wifi-hotspot`. The installation procedure and configuration of this software is described below.
 
 #. Install Linux Hotspot software:
 
@@ -68,13 +72,44 @@ Create WiFi Hotspot from Jetbot
 Install Web Application
 ***********************
 
-Actions done:
-- Install Flask: pip install Flask
-- Add folders static and templates to ./src
-- Add WebController.py to ./src and sudo chmod +x WebController.py
-- Add WebJoystick.msg to ./msg
-- Add WebJoystick.msg in CMakeLists.txt under add_message_files()
-- Execute cakin_make from ~/catkin_ws folder
-- Add <node name="WebController" pkg="mas507" type="WebController.py" output="screen"/> to start.launch file
-- Visit http://jetbot-desktop<group-number>:8000
+The Flask Web Application is ready to use and hence is only needed to be added to the ROS launch file and :code:`WebController.py` file has to be moved from this repo to your own. Follow the steps to install and enable the Web Controller app in your project:
+
+#. Install Flask:
+
+    - :code:`pip install Flask`
+
+#. Copy the two folders :code:`./src/static` and :code:`./src/templates` to your project in the same folder locations.
+
+
+#. Copy :code:`WebController.py` to :code:`./src` and make the file executable by executing the following command :code:`sudo chmod +x WebController.py`
+
+#. Copy the ROS message file :code:`WebJoystick.msg` found in :code:`./msg` to your project.
+
+#. In order to make ROS being aware of the new ROS message, the message has to be added to the :code:`CMakeLists.txt` under the section :code:`add_message_files()`. The new ROS message :code:`WebJoystick.msg` are added as:
+
+    .. code-block::
+
+        add_message_files(
+            FILES
+            ServoSetpoints.msg
+            WebJoystick.msg
+        )
+
+
+#. After adding the new ROS message, the :code:`cakin_make` has to be executed from the from :code:`~/catkin_ws` folder. This will build and register the new message.
+
+#. Add the new node for our Flask Web Controller by adding the line :code:`<node name="WebController" pkg="mas507" type="WebController.py" output="screen"/>` to the :code:`start.launch` file.
+
+#. Connect your smartphone or tablet to the new WiFi hotspot being hosted by the Jetbot.
+
+#. Start the ROS package using :code:`roslaunch mas507 start.launch` and visit :code:`http://jetbot-desktop<group-number>:8000` on your smartphone or tablet. The video stream from the camera should now be streaming to the webpage background. Try to tap the screen to use the two joysticks on the left and right side of the screen.
+
+******************************
+Integrate with Main Controller
+******************************
+
+The two new ROS messages produced by the Flask web application node are now available using the ROS topics :code:`\webJoystickLeft` and :code:`webJoystickRight`. Please look at the :code:`MainController.py` to see how it can be integrated to move the robot. Be aware that the values might be tuned for your specific Jetbot. The implementation and usage of the Web Controller joysticks is also shown below.
+
+.. literalinclude:: ../../src/MainController.py
+    :language: python
 
