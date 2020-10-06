@@ -80,10 +80,9 @@ The Flask Web Application is ready to use and hence is only needed to be added t
 
 #. Copy the two folders :code:`./src/static` and :code:`./src/templates` to your project in the same folder locations.
 
+#. Copy the text from :code:`./src/WebController.py` onto your Jetbot and make the file executable by executing the following command :code:`sudo chmod +x WebController.py`
 
-#. Copy :code:`WebController.py` to :code:`./src` and make the file executable by executing the following command :code:`sudo chmod +x WebController.py`
-
-#. Copy the ROS message file :code:`WebJoystick.msg` found in :code:`./msg` to your project.
+#. Copy the text from the ROS message file :code:`./msg/WebJoystick.msg` onto your Jetbot in the same location.
 
 #. In order to make ROS being aware of the new ROS message, the message has to be added to the :code:`CMakeLists.txt` under the section :code:`add_message_files()`. The new ROS message :code:`WebJoystick.msg` are added as:
 
@@ -96,7 +95,7 @@ The Flask Web Application is ready to use and hence is only needed to be added t
         )
 
 
-#. After adding the new ROS message, the :code:`cakin_make` has to be executed from the from :code:`~/catkin_ws` folder. This will build and register the new message.
+#. After adding the new ROS message, the :code:`catkin_make` has to be executed from the from :code:`~/catkin_ws` folder. This will build and register the new message.
 
 #. Add the new node for our Flask Web Controller by adding the line :code:`<node name="WebController" pkg="mas507" type="WebController.py" output="screen"/>` to the :code:`start.launch` file.
 
