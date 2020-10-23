@@ -4,7 +4,10 @@ Main Control Node
 """
 import rospy
 import numpy as np
+import os
 from mas507.msg import ServoSetpoints, WebJoystick
+from sensor_msgs.msg import Image
+from StrawberryDetector import StrawberryDetector
 
 class Joystick(object):
     def __init__(self):
@@ -24,13 +27,19 @@ if __name__ == '__main__':
         leftJoystick = Joystick()
         rightJoystick = Joystick()
 
+        # Publishers
+        pub_servoSetpoints = rospy.Publisher('servoSetpoints', ServoSetpoints, queue_size=1)
+        pub_strawberry_detection = rospy.Publisher('strawberry_detection', Image, queue_size=1)
+        
+        # Strawberry detector
+        intrinsicCalibration =  np.load('%s/catkin_ws/src/mas507/data/intrinsicCalibration.npz' % (os.path.expanduser("~")))
+        strawberryDetector = StrawberryDetector(pub_strawberry_detection, intrinsicCalibration['mtx'], intrinsicCalibration['dist'])
+
         # Subscribers
+        sub_calibrated = rospy.Subscriber('image_calibrated', Image, strawberryDetector.callback)
         sub_leftJoystick = rospy.Subscriber('webJoystickLeft', WebJoystick, leftJoystick.callback)
         sub_rightJoystick = rospy.Subscriber('webJoystickRight', WebJoystick, rightJoystick.callback)
 
-        # Publishers
-        pub_servoSetpoints = rospy.Publisher('servoSetpoints', ServoSetpoints, queue_size=1)
-        
         # Start Synchronous ROS node execution
         t = 0
         rate = rospy.Rate(10)
