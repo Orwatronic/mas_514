@@ -66,11 +66,11 @@ class StrawberryDetector(object):
             # Add circle to image around COM and image boundary using calculated radius
             cv2.circle(image, centre_of_mass, r, (0, 0, 255), 1, cv2.LINE_AA)
             
-            # PnP for straberry location
+            # PnP for strawberry location
             n = 30
             t = np.linspace(0, 2*np.pi, n)
 
-            # 3D points of strawaberry major circkle
+            # 3D points of strawberry major circkle
             radius_strawberry = (32.0/1000.0)/2
             objpnts = np.zeros([n,3])
             objpnts[:,0] = radius_strawberry*np.sin(t)
@@ -81,7 +81,7 @@ class StrawberryDetector(object):
             imgpoints[:,0] = centre_of_mass[0] + r*np.sin(t)
             imgpoints[:,1] = centre_of_mass[1] + r*np.cos(t)
             
-            # Solve for position and oreintation
+            # Solve for position and orientation
             _, rvec, tvec = cv2.solvePnP(objpnts, imgpoints, self.mtx, self.dist)
             
             # Return detection results to class
