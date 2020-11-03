@@ -1,5 +1,7 @@
-  sphinx
-  sphinx-rtd-theme
-  sphinxcontrib-bibtex
-  recommonmark
-  sphinx-autobuild
+python-dateutil
+recommonmark
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-bibtex
+sphinx-autobuild
+sphinxcontrib-googleanalytics

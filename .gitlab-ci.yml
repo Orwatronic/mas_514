@@ -8,6 +8,7 @@ pages:
   - pip install -U sphinxcontrib-bibtex
   - pip install -U recommonmark
   - sphinx-build -b html ./docs public
+  - echo $GOOGLE_ANALYTICS_KEY
   artifacts:
     paths:
     - public
