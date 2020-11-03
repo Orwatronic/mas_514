@@ -28,17 +28,26 @@ class JetbotController(object):
             where, theoretically, 306 is stand-still, 204 is maximum reverse
             and 408 is maximum forward.
 
-            i=0: right motor
-            i=1: left motor
-            i=2: servo 1
-            i=3: servo 2
-            i=4: servo 3
+            i=0: right motor [204..408]
+            i=1: left motor [204..408]
+            i=2: servo 1 [204..816]
+            i=3: servo 2 [204..816]
+            i=4: servo 3 [204..816]
         """
 
         for i in range(0, 5):
-            # Limit input to u in [204, 408]
+            # Lower RC protocoll limit
             u[i] = max(204, u[i])
-            u[i] = min(408, u[i])
+
+            # Upper RC protocoll limit
+            if i < 2:
+                # Upper limit for wheel motors
+                u[i] = min(408, u[i])
+
+            else:
+                # Upper limit for arm motors
+                u[i] = min(816, u[i])
+
             
             # Set PWM
             self.adafruit.set_pwm(i, 0, u[i])
