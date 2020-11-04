@@ -3,12 +3,8 @@ image: sphinxdoc/sphinx
 pages:
   stage: deploy  
   script:
-  - pip install -U sphinx
-  - pip install -U sphinx-rtd-theme
-  - pip install -U sphinxcontrib-bibtex
-  - pip install -U recommonmark
+  - pip install -U -r ./docs/requirements.txt
   - sphinx-build -b html ./docs public
-  - echo $GOOGLE_ANALYTICS_KEY
   artifacts:
     paths:
     - public

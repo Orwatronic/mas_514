@@ -86,12 +86,12 @@ The Jetbot has to be shut down by entering a terminal command in VSCode.
   - `sudo shutdown now`
 - Enter the password when prompted.
 
-## Optional: X Forwarding
+<!-- ## Optional: X Forwarding
 This section explains the necessary steps to forward X to your remote computer. This example is meant for Windows, but should also work the same for a Linux based OS. Forwarding X, means that we can use the Matplotlib library and se the resulting plot on our remote computer. It also work with most other GUI applications running on the host computer (Jetson Nano). To enable X forwarding, the following steps are required for the host and the remote computer.
 
 ### Host Computer Setup (Jetson Nano)
 Log in to the remote computer using SSH as before and carry out the following steps.
 
 
-### Remote Computer Setup (Your Computer)
+### Remote Computer Setup (Your Computer) -->
 
