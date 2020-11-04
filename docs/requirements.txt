@@ -1,7 +1,6 @@
-python-dateutil
 recommonmark
 sphinx
 sphinx-rtd-theme
 sphinxcontrib-bibtex
 sphinx-autobuild
-sphinxcontrib-googleanalytics
+

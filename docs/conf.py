@@ -34,8 +34,7 @@ version = re.sub('^v', '', os.popen('git describe').read().strip())
 extensions = [
     'recommonmark',
     'sphinx_rtd_theme',
-    'sphinxcontrib.bibtex',
-    'sphinxcontrib.googleanalytics'
+    'sphinxcontrib.bibtex'
 ]
 
 # Handle both ReST and Markdown files
@@ -45,14 +44,16 @@ source_suffix = {
     '.md': 'markdown'
 }
 
+# Additional variables for HTML context (used in _templates/*)
+html_context = {}
+
 try:
     # Google analytics ID, variable must be passed from CI/CD environment    
-    googleanalytics_id = os.environ['GOOGLE_ANALYTICS_KEY']
-    googleanalytics_enabled = True
+    html_context['GOOGLE_ANALYTICS_ID'] = os.environ['GOOGLE_ANALYTICS_ID']
     
 except KeyError:
-    googleanalytics_enabled = False
     print('No Google analytics environment variable is defined for GOOGLE_ANALYTICS_KEY')
+    html_context['GOOGLE_ANALYTICS_ID'] = ''
 
 
 # Add any paths that contain templates here, relative to this directory.
