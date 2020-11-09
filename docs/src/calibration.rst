@@ -30,5 +30,15 @@ Color Calibration
 -----------------
 The image is also color calibrated, but this step is not supposed to be changed by the students since the lecturer have already ensured that all the Jetbot cameras has been calibrated for possible color distortions. The color calibration procedure is seen also in the :code:`JetbotCamera` node, where the color calibration matrix is loaded from :code:`colorCalibration.npz` also found in the :code:`~/catkin_ws/src/mas507/data/` folder. For more information about the color calibration procedure, please check out :download:`this lecture on color calibration <../pdfs/Lec3_colorCalibration.pdf>`.
 
+If another image resolution is required, the color calibration has to be executed once again. The steps are the following:
+
+- Capture at least 20 images of a white wall or a piece of paper in decent light conditions.
+- Save these images to a suitable location e.g. a folder named :code:`./whiteimages`.
+- Create a file with the below content in the parent folder of :code:`./whiteimages` and execute the Python script. Remember to change the parameters for width and height according to the correct resolution.
+
+.. literalinclude:: ../../calibration/calibrateColor.py
+    :language: python
+
+
 
 
