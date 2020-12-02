@@ -3,24 +3,29 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MAS507 - Product Development and Project Management
-===================================================
-
 .. image:: ./figs/uia.png
    :width: 600px
    :align: center
    :alt: alternate text
 
+|
 
 .. raw:: html
 
    <h2 style="text-align: center">University of Agder</h2>
    <p style="text-align: center">Department of Engineering Sciences<br>Grimstad, Norway</p>
    
+|
 
 .. image:: ./figs/jetbot.jpg
    :width: 12cm
    :align: center
+
+|
+|
+
+MAS507 - Product Development and Project Management
+===================================================
 
 Student Group
 -------------
@@ -30,6 +35,7 @@ Student Group
 - Student B
 
 - Student C
+
 
 Lecturers
 ---------
