@@ -6,8 +6,43 @@
 MAS507 - Product Development and Project Management
 ===================================================
 
+.. image:: ./figs/uia.png
+   :width: 600px
+   :align: center
+   :alt: alternate text
+
+
+.. raw:: html
+
+   <h2 style="text-align: center">University of Agder</h2>
+   <p style="text-align: center">Department of Engineering sciences<br>Grimstad, Norway</p>
+   
+
 .. image:: ./figs/jetbot.jpg
-   :width: 15cm
+   :width: 12cm
+   :align: center
+
+Student Group
+-------------
+
+- Student A
+
+- Student B
+
+- Student C
+
+Lecturers
+---------
+
+- Sondre Sanden Tørdal, PhD
+   - Postdoctoral Fellow in Mehcatronics
+   - https://www.uia.no/kk/profil/sondrest
+
+- Mette Mo Jakobsen, PhD
+   - Professor in Product Development and Project-based learning
+   - https://www.uia.no/kk/profil/mettemj
+
+
 
 .. toctree::
    :maxdepth: 2
@@ -26,6 +61,8 @@ MAS507 - Product Development and Project Management
 
 .. Indices and tables
 .. ==================
+
+
 
 .. * :ref:`genindex`
 .. * :ref:`modindex`
