@@ -15,7 +15,7 @@ MAS507 - Product Development and Project Management
 .. raw:: html
 
    <h2 style="text-align: center">University of Agder</h2>
-   <p style="text-align: center">Department of Engineering sciences<br>Grimstad, Norway</p>
+   <p style="text-align: center">Department of Engineering Sciences<br>Grimstad, Norway</p>
    
 
 .. image:: ./figs/jetbot.jpg
