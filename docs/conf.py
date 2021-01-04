@@ -47,6 +47,9 @@ source_suffix = {
 # Additional variables for HTML context (used in _templates/*)
 html_context = {}
 
+# BibTex files
+bibtex_bibfiles = {'refs.bib'}
+
 try:
     # Google analytics ID, variable must be passed from CI/CD environment    
     html_context['GOOGLE_ANALYTICS_ID'] = os.environ['GOOGLE_ANALYTICS_ID']

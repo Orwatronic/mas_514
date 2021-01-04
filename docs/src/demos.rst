@@ -188,9 +188,9 @@ Python Class
 
 
 
-*****************
+****************************
 Lecture 5: Elbow Manipulator
-*****************
+****************************
 
 .. figure:: ../figs/kinematics/robot.jpg
     :figclass: align-center
