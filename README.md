@@ -1,7 +1,7 @@
 # MAS514 - Robotics and Instrumentation
 This repo contains code and various guides for the studets to use in the course [MAS507](https://www.uia.no/en/studieplaner/topic/MAS514-G) teached at the [Univeristy of Agder](https://www.uia.no/en), Campus Grimstad. The course homepage with documentation, guides and code explanations are found at https://uia-mekatronikk.gitlab.io/mas507/index.html
 
-| Year | Lecturer 1                  | 
+| Year | Lecturer                    | 
 | ---- | :-------------------------- | 
 | 2021 | [Daniel Hagen][dha]         | 
 
