@@ -24,7 +24,7 @@
 |
 |
 
-MAS507 - Product Development and Project Management
+MAS514 - Product Development and Project Management
 ===================================================
 
 Student Group
@@ -40,15 +40,9 @@ Student Group
 Lecturers
 ---------
 
-- Sondre Sanden Tørdal, PhD
-   - Postdoctoral Fellow in Mehcatronics
-   - https://www.uia.no/kk/profil/sondrest
-
-- Mette Mo Jakobsen, PhD
-   - Professor in Product Development and Project-based learning
-   - https://www.uia.no/kk/profil/mettemj
-
-
+- Daniel Hagen, PhD
+   - Senior R&D Eninger, Red Rock Group
+   - https://www.uia.no/kk/profil/danielh
 
 .. toctree::
    :maxdepth: 2
