@@ -7,4 +7,5 @@ This repo contains code and various guides for the studets to use in the course 
 
 
 <!-- Hyperlinks  -->
-[dha]: https://www.uia.no/kk/profil/danielh
+[dha]:  https://www.linkedin.com/in/hagenmek/ 
+<!--[dha]:  https://www.uia.no/kk/profil/danielh -->
