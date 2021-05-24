@@ -39,12 +39,10 @@ Local Sphinx Testing
 ------------------------------------
 This step assumes that you have installed `Anaconda 3 <https://www.anaconda.com/products/individual>`_ on your local computer. The following step is required to work with the documentation locally.
 
-#. Open Anaconda Command Prompt and install the following packages using pip:
+#. Open Anaconda Command Prompt and install the required packages using pip:
 
-    * ``pip install sphinx``
-    * ``pip install sphinx-rtd-theme``
-    * ``pip install sphinx-autobuild``
-    * ``pip install recommonmark``
+    * ``cd C:\<gitlab_folder>\mas514\docs``
+    * ``pip install -r requirements.txt``
 
 After that the Python packages have been installed, the local autobuild feature can be started by executing ``serve.bat`` from the ``./docs/`` folder. Visit the generated webpage on http://127.0.0.1:8000. The autobuild system will detect a any changes and automatically rebuild your webpage if some of the files are changed in the ``docs`` folder. Go ahead and try it out!
 
