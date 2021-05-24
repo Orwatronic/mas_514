@@ -19,9 +19,9 @@ import re
 
 # -- Project information -----------------------------------------------------
 
-project = 'MAS507'
+project = 'MAS514'
 copyright = '2020, University of Agder'
-author = 'Andreas Klausen and Sondre Sanden Tørdal'
+author = 'Daniel Hagen'
 
 # The full version, including alpha/beta/rc tags
 version = re.sub('^v', '', os.popen('git describe').read().strip())

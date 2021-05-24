@@ -24,7 +24,7 @@
 |
 |
 
-MAS514 - Product Development and Project Management
+MAS514 - Robotics and Instrumentation
 ===================================================
 
 Student Group
