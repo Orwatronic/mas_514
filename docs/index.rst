@@ -41,7 +41,7 @@ Lecturers
 ---------
 
 - Daniel Hagen, PhD
-   - Senior R&D Eninger, Red Rock Group
+   - Senior R&D Engineer, Red Rock Group
    - https://www.uia.no/kk/profil/danielh
 
 .. toctree::
