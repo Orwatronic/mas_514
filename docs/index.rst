@@ -27,21 +27,11 @@
 MAS514 - Robotics and Instrumentation
 ===================================================
 
-Student Group
--------------
-
-- Student A
-
-- Student B
-
-- Student C
-
-
-Lecturers
+Lecturer
 ---------
 
 - Daniel Hagen, PhD
-   - Senior R&D Engineer, Red Rock Group
+   - Associate Professor
    - https://www.uia.no/kk/profil/danielh
 
 .. toctree::
