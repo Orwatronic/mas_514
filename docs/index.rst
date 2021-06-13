@@ -32,7 +32,7 @@ Lecturer
 
 - Daniel Hagen, PhD
    - Associate Professor
-   - https://www.uia.no/kk/profil/danielh
+   - https://www.uia.no/en/kk/profile/danielh
 
 .. toctree::
    :maxdepth: 2
