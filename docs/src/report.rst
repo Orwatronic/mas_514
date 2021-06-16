@@ -15,7 +15,7 @@ This webpage contains a nice overview of the Sphinx styles and syntax: https://d
 
 Sphinx and CI/CD
 -------------------------------------
-To get started with the report, the easiest way to get up to speed is to simply fork the MAS507 repository on GitLab and clone it to your a folder in your computer. Follow the steps below to set up your computer:
+To get started with the report, the easiest way to get up to speed is to simply fork the MAS514 repository on GitLab and clone it to your a folder in your computer. Follow the steps below to set up your computer:
 
 #.  Download and install Git from: https://git-scm.com/download
 
@@ -24,16 +24,16 @@ To get started with the report, the easiest way to get up to speed is to simply 
     * ``git config --global user.email "john.doe@mail.com"``
 
 #.  Create a GitLab user on https://gitlab.com
-#.  Your Merge master visits https://gitlab.com/uia-mekatronikk/mas507 and forks the course repo from your GitLab account.
-#.  Merge master invites the other group members to the mas507 repo. 
-#.  All group members clones the repo to their own computers in a non-synced folder (e.g. Dropbox, Google Drive) executing: ``git clone https://gitlab.com/<merge-master-username>/mas507`` inside the destination folder e.g. ``C:\GitLab\``.
-#. Open ``C:\GitLab\mas507`` folder in Visual Studio Code and try to edit the ``C:\GitLab\mas507\docs\src\ros.md`` by writing your name in it for example.
+#.  Your Merge master visits https://gitlab.com/hagenmek/mas514 and forks the course repo from your GitLab account.
+#.  Merge master invites the other group members to the mas514 repo. 
+#.  All group members clones the repo to their own computers in a non-synced folder (e.g. Dropbox, Google Drive) executing: ``git clone https://gitlab.com/<merge-master-username>/mas514`` inside the destination folder e.g. ``C:\GitLab\``.
+#. Open ``C:\GitLab\mas514`` folder in Visual Studio Code and try to edit the ``C:\GitLab\mas514\docs\src\ros.md`` by writing your name in it for example.
 #. Commit the changes by ``git add -A`` followed by a commit ``git commit -m "Test commit from my local computer"``.
 #. After the commit, the changes shall be pushed to GitLab using ``git push``
-#. This will start the CI/CD Process on your GitLab account and after about a minute your very own webpage shall appear on ``https://<merge-master-username>.gitlab.io/mas507``
+#. This will start the CI/CD Process on your GitLab account and after about a minute your very own webpage shall appear on ``https://<merge-master-username>.gitlab.io/mas514``
 #. Congrats, your first webpage made with Sphinx is now online as a result of using DevOps CI/CD methods!
 
-Please notice that the recipe for the automatic build executed by GitLab is described by the GitLab runner file ``.gitlab-ci.yml`` found the root folder of the MAS507 repo. 
+Please notice that the recipe for the automatic build executed by GitLab is described by the GitLab runner file ``.gitlab-ci.yml`` found the root folder of the MAS514 repo. 
 
 Local Sphinx Testing
 ------------------------------------
@@ -44,9 +44,11 @@ This step assumes that you have installed `Anaconda 3 <https://www.anaconda.com/
     * ``cd C:\<gitlab_folder>\mas514\docs``
     * ``pip install -r requirements.txt``
 
-After that the Python packages have been installed, the local autobuild feature can be started by executing ``serve.bat`` from the ``./docs/`` folder. Visit the generated webpage on http://127.0.0.1:8000. The autobuild system will detect a any changes and automatically rebuild your webpage if some of the files are changed in the ``docs`` folder. Go ahead and try it out!
+After that the Python packages have been installed, the local autobuild feature can be started by executing ``serve.bat`` from the ``./docs/`` folder. 
 
+* ``start serve.bat``
 
+Visit the generated webpage on http://127.0.0.1:8000. The autobuild system will detect a any changes and automatically rebuild your webpage if some of the files are changed in the ``docs`` folder. Go ahead and try it out!
 
 
 Math in reST
