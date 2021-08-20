@@ -67,8 +67,8 @@ Open VSCode and Install Remote SSH extension
   - Choose to edit the configuration file under `C:\Users\%USERNAME%\.ssh\config`
     - Under `Host 192.168.0.8`, add the information `IdentityFile ~/.ssh/id_rsa_jetbot<group-number>` (See image below)
 - Click the green icon again and choose `Remote-SSH: Connect to host`
-  - Now the item `192.168.0.<group-number>` should be there.
-  - Click this and you should be connected.
+  - Now the item `192.168.0.<group-number>` or `jetbot-desktop8` should be there.
+  - Click this, select "Linux" as the remote platform, and the you should be connected.
 
 Inside VSCode you can open a folder using the bar on the left side.
 A terminal window can be opened with maybe `[CTRL + J]` depending on system. 
