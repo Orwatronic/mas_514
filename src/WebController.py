@@ -9,7 +9,7 @@ import rospy
 import cv2
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from mas507.msg import WebJoystick
+from mas514.msg import WebJoystick
 import threading
 from flask import Flask, render_template, Response, request
 import time
