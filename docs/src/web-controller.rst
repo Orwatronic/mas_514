@@ -97,11 +97,11 @@ The Flask Web Application is ready to use and hence is only needed to be added t
 
 #. After adding the new ROS message, the :code:`catkin_make` has to be executed from the from :code:`~/catkin_ws` folder. This will build and register the new message.
 
-#. Add the new node for our Flask Web Controller by adding the line :code:`<node name="WebController" pkg="mas507" type="WebController.py" output="screen"/>` to the :code:`start.launch` file.
+#. Add the new node for our Flask Web Controller by adding the line :code:`<node name="WebController" pkg="mas514" type="WebController.py" output="screen"/>` to the :code:`start.launch` file.
 
 #. Connect your smartphone or tablet to the new WiFi hotspot being hosted by the Jetbot.
 
-#. Start the ROS package using :code:`roslaunch mas507 start.launch` and visit :code:`http://jetbot-desktop<group-number>:8000` on your smartphone or tablet. The video stream from the camera should now be streaming to the webpage background. Try to tap the screen to use the two joysticks on the left and right side of the screen.
+#. Start the ROS package using :code:`roslaunch mas514 start.launch` and visit :code:`http://jetbot-desktop<group-number>:8000` on your smartphone or tablet. The video stream from the camera should now be streaming to the webpage background. Try to tap the screen to use the two joysticks on the left and right side of the screen.
 
 ******************************
 Integrate with Main Controller
