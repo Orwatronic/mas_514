@@ -5,7 +5,7 @@ Node for controlling Jetbot robot
 import rospy
 import numpy as np
 from std_msgs.msg import Int64
-from mas507.msg import ServoSetpoints
+from mas514.msg import ServoSetpoints
 import Adafruit_PCA9685
 
 class JetbotController(object):
