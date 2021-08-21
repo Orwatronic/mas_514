@@ -23,12 +23,12 @@ class JetbotCamera(object):
         self.capture = self.get_gstreamer_capture()
 
         # Load camera calibration matrix from  Python calibration
-        data = np.load('%s/catkin_ws/src/mas507/data/intrinsicCalibration.npz' % (os.path.expanduser("~")))
+        data = np.load('%s/catkin_ws/src/mas514/data/intrinsicCalibration.npz' % (os.path.expanduser("~")))
         self.calibration_matrix = data['mtx']
         self.distortion_parameters = data['dist']
 
         # Load color calibration matrix
-        data = np.load('%s/catkin_ws/src/mas507/data/colorCalibration.npz' % (os.path.expanduser("~")))
+        data = np.load('%s/catkin_ws/src/mas514/data/colorCalibration.npz' % (os.path.expanduser("~")))
         self.gain_matrix = data["arr_0"] # Original load without fix
         data.close()
 

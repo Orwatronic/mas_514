@@ -5,7 +5,7 @@ Main Control Node
 import rospy
 import numpy as np
 import os
-from mas507.msg import ServoSetpoints, WebJoystick
+from mas514.msg import ServoSetpoints, WebJoystick
 from sensor_msgs.msg import Image
 from StrawberryDetector import StrawberryDetector
 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         pub_strawberry_detection = rospy.Publisher('strawberry_detection', Image, queue_size=1)
         
         # Strawberry detector
-        intrinsicCalibration =  np.load('%s/catkin_ws/src/mas507/data/intrinsicCalibration.npz' % (os.path.expanduser("~")))
+        intrinsicCalibration =  np.load('%s/catkin_ws/src/mas514/data/intrinsicCalibration.npz' % (os.path.expanduser("~")))
         strawberryDetector = StrawberryDetector(pub_strawberry_detection, intrinsicCalibration['mtx'], intrinsicCalibration['dist'])
 
         # Subscribers

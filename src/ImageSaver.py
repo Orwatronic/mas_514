@@ -14,7 +14,7 @@ class ImageSaver(object):
     idx = 0
 
     def __init__(self):
-        self.imagePath = '%s/catkin_ws/src/mas507/calibration/images/' % (os.path.expanduser("~"))
+        self.imagePath = '%s/catkin_ws/src/mas514/calibration/images/' % (os.path.expanduser("~"))
         self.cvBridge = CvBridge()
 
         

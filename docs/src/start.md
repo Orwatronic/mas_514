@@ -1,5 +1,5 @@
 # Getting Started
-This repository contains software and code examples for the Jetbot hardware which is supposed to be used in the MAS507 course.
+This repository contains software and code examples for the Jetbot hardware which is supposed to be used in the MAS514 course.
 
 The documentation will sometimes refer to your group number (`<group-number>`, Jetbot number). This text is then supposed to be replaced with your group number or more precisely, your jetbot id.
 
@@ -67,7 +67,7 @@ Open VSCode and Install Remote SSH extension
   - Choose to edit the configuration file under `C:\Users\%USERNAME%\.ssh\config`
     - Under `Host 192.168.0.8`, add the information `IdentityFile ~/.ssh/id_rsa_jetbot<group-number>` (See image below)
 - Click the green icon again and choose `Remote-SSH: Connect to host`
-  - Now the item `192.168.0.<group-number>` or `jetbot-desktop8` should be there.
+  - Now the item `192.168.0.<group-number>` or `jetbot-desktop<group-number>` should be there.
   - Click this, select "Linux" as the remote platform, and the you should be connected.
 
 Inside VSCode you can open a folder using the bar on the left side.

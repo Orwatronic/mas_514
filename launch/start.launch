@@ -1,9 +1,9 @@
 <launch>
-    <node name="JetbotCamera" pkg="mas507" type="JetbotCamera.py" output="screen"/>
-    <node name="ImageSaver" pkg="mas507" type="ImageSaver.py" output="screen"/>
-    <node name="JetbotController" pkg="mas507" type="JetbotController.py" output="screen"/>
-    <node name="MainController" pkg="mas507" type="MainController.py" output="screen"/>
-    <node name="WebController" pkg="mas507" type="WebController.py" output="screen"/>
+    <node name="JetbotCamera" pkg="mas514" type="JetbotCamera.py" output="screen"/>
+    <node name="ImageSaver" pkg="mas514" type="ImageSaver.py" output="screen"/>
+    <node name="JetbotController" pkg="mas514" type="JetbotController.py" output="screen"/>
+    <node name="MainController" pkg="mas514" type="MainController.py" output="screen"/>
+    <node name="WebController" pkg="mas514" type="WebController.py" output="screen"/>
     <node name="node_web_video_server" pkg="web_video_server" type="web_video_server"/>
     <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
         <arg name="port" value="9090"/>
