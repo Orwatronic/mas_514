@@ -18,7 +18,7 @@ In order to achieve sufficient response when using the Web Controller from your 
 It is therefore needed to install some additional software named :code:`linux-wifi-hotspot`. The installation procedure and configuration of this software is described below.
 
 #. Install Linux Hotspot software:
-
+    - :code: `cd ~`
     - :code:`sudo apt install -y libgtk-3-dev build-essential cmake gcc g++ pkg-config make hostapd`
     - :code:`git clone https://github.com/lakinduakash/linux-wifi-hotspot`
     - :code:`cd linux-wifi-hotspot/src/scripts`
