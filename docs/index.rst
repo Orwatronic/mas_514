@@ -41,10 +41,12 @@ Lecturer
    src/start
    src/report
    src/ros
-   src/calibration
    src/web-controller
-   src/git
    src/troubleshooting
+   src/git
+   src/calibration
+   src/strawberry
+
 
 .. Indices and tables
 .. ==================
