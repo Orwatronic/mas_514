@@ -10,13 +10,9 @@ If the connection is not working, check the following steps:
 - Can you log in using Putty?
 - If you can log in using Putty, try to execute :code:`sudo rm -rd ~/.vscode-server` and then try to log in using VS Code again.
 
-#########
-Git Usage
-#########
 
-***********************
-Resolve Merge Conflicts
-***********************
+Resolve Git Merge Conflicts
+---------------------------
 A merge conflict occurs when two files are merged and Git is not able to automatically merge the two files and their content. In these cases, we have to take action and resolve the conflicts manually. A merge conflict is indicated using a mark :code:`c` in VS Code's file tree as it is indicated inside the red box.
 
 .. figure:: ../figs/git/merge-conflict.png
