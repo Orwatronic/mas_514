@@ -44,9 +44,7 @@ Lecturer
    src/calibration
    src/web-controller
    src/git
-   src/strawberry
    src/troubleshooting
-   src/bibliography
 
 .. Indices and tables
 .. ==================
