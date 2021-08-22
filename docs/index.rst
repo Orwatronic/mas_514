@@ -43,7 +43,6 @@ Lecturer
    src/ros
    src/web-controller
    src/troubleshooting
-   src/git
    src/calibration
    src/strawberry
 
