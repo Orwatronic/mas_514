@@ -110,7 +110,8 @@ Check first if OpenCV 4.1.1 is installed already
   - If successful, it should not crash, and 4.1.1 should be printed.
   - If it crashes or another version (like 3.3.1) is printed, proceed to installation below
 
-- [Add Swap Space.](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/?fbclid=IwAR2Sm3NynkVUhTxOacU2ssDvGz21bl01mkJL6RMCTNP5KTmQFw9BMZFZUCo)
+[Add Swap Space.](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/?fbclid=IwAR2Sm3NynkVUhTxOacU2ssDvGz21bl01mkJL6RMCTNP5KTmQFw9BMZFZUCo)
+
   - Before continuing with this tutorial, check if your Ubuntu installation already has swap enabled by typing: `sudo swapon --show`
   - Start by creating a file which will be used for swap: `sudo fallocate -l 4G /swapfile`
   - Only the root user should be able to write and read the swap file. Set the correct permissions by typing: `sudo chmod 600 /swapfile`
