@@ -2,7 +2,7 @@
 
 **ONLY FOR THE TEACHER**
 
-This section will go through all necessary steps to install software on Jetson Nano/Jetbot for MAS507. 
+This section will go through all necessary steps to install software on Jetson Nano/Jetbot for MAS514. 
 There are two major steps involved:
 
 1. Installing operating system
@@ -109,6 +109,14 @@ Check first if OpenCV 4.1.1 is installed already
 - Run `python -c "import cv2; import cv2.aruco; print(cv2.__version__)"`
   - If successful, it should not crash, and 4.1.1 should be printed.
   - If it crashes or another version (like 3.3.1) is printed, proceed to installation below
+
+- Add Swap Space.
+  - Based on[here](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/?fbclid=IwAR2Sm3NynkVUhTxOacU2ssDvGz21bl01mkJL6RMCTNP5KTmQFw9BMZFZUCo)
+  - Start by creating a file which will be used for swap: `sudo fallocate -l 4G /swapfile`
+  - Only the root user should be able to write and read the swap file. Set the correct permissions by typing: `sudo chmod 600 /swapfile`
+  - Use the mkswap utility to set up a Linux swap area on the file: `sudo mkswap /swapfile`
+  - Activate the swap file using the following command: `sudo swapon /swapfile`
+  - Verify that the swap is active by using either the swapon or the free command , as shown below: `sudo swapon --show`
 
 Installation instructions that requires internet on jetbot:
 
