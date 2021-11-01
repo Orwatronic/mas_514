@@ -34,11 +34,16 @@ Course MAS-514 - Project Navigation Stak and SLAM
 
 
 
-Supervisor
+SUPERVISOR
 --------------
 - Daniel Hagen, PhD
-   - Associate Professor
-   
+
+University of Agder, 2021
+-------------------------------
+Faculty of Engineering and Sciences
+Department of Engineering and Sciences
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
