@@ -24,9 +24,8 @@
 |
 |
 
-Course MAS514 - Project Navigation Stak and SLAM
+Course MAS-514 - Project Navigation Stak and SLAM
 ===================================================
-
    - Hussam Haij
    - Mohammed Alsaadi
    - Orwah Zubaidi
@@ -35,11 +34,11 @@ Course MAS514 - Project Navigation Stak and SLAM
 
 
 
-
+Supervisor
+--------------
 - Daniel Hagen, PhD
    - Associate Professor
-   - https://www.uia.no/en/kk/profile/danielh
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
