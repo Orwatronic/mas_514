@@ -44,7 +44,7 @@ Lecturer
    src/web-controller
    src/troubleshooting
    src/calibration
-   src/Mohammed_Test
+   src/Group
 
 
 .. Indices and tables
