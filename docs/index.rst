@@ -25,10 +25,9 @@
 |
 
 MAS514 - Robotics and Instrumentation
-Navigation Stak and SLAM
 ===================================================
 
-Lecturer
+Project
 ---------
 
 - Daniel Hagen, PhD
