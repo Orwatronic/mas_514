@@ -29,6 +29,13 @@ MAS514 - Robotics and Instrumentation
 
 Project
 ---------
+Navigation Stak and SLAM
+
+Hussam Haij
+Mohammed Alsaadi
+Orwah Zubaidi
+
+
 
 - Daniel Hagen, PhD
    - Associate Professor
