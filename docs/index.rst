@@ -25,7 +25,7 @@
 |
 
 Course MAS-514 - Project Navigation Stak and SLAM
-===================================================
+--------------
    - Hussam Haij
    - Mohammed Alsaadi
    - Orwah Zubaidi
@@ -35,7 +35,6 @@ Course MAS-514 - Project Navigation Stak and SLAM
 
 
 SUPERVISOR
---------------
 - Daniel Hagen, PhD
 
 
@@ -48,7 +47,9 @@ University of Agder, 2021
  - Department of Engineering and Sciences
 
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
    src/start
    src/report
