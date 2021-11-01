@@ -38,15 +38,17 @@ SUPERVISOR
 --------------
 - Daniel Hagen, PhD
 
+
+
+
+
+
 University of Agder, 2021
--------------------------------
  - Faculty of Engineering and Sciences
  - Department of Engineering and Sciences
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+
 
    src/start
    src/report
