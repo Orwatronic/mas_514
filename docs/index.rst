@@ -24,15 +24,28 @@
 |
 |
 
-MAS514 - Robotics and Instrumentation
-===================================================
+Course MAS-514 - Project Navigation Stak and SLAM
+--------------
+   - Hussam Haij
+   - Mohammed Alsaadi
+   - Orwah Zubaidi
 
-Lecturer
----------
 
+
+
+
+SUPERVISOR
 - Daniel Hagen, PhD
-   - Associate Professor
-   - https://www.uia.no/en/kk/profile/danielh
+
+
+
+
+
+
+University of Agder, 2021
+ - Faculty of Engineering and Sciences
+ - Department of Engineering and Sciences
+
 
 .. toctree::
    :maxdepth: 2
@@ -44,7 +57,7 @@ Lecturer
    src/web-controller
    src/troubleshooting
    src/calibration
-   src/strawberry
+   src/Group
 
 
 .. Indices and tables
