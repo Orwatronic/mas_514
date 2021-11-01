@@ -24,16 +24,15 @@
 |
 |
 
-MAS514 - Robotics and Instrumentation
+Course MAS514 - Project Navigation Stak and SLAM
 ===================================================
 
-Project
----------
-Navigation Stak and SLAM
+   - Hussam Haij
+   - Mohammed Alsaadi
+   - Orwah Zubaidi
 
-Hussam Haij
-Mohammed Alsaadi
-Orwah Zubaidi
+
+
 
 
 
