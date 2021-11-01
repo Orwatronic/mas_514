@@ -40,8 +40,8 @@ SUPERVISOR
 
 University of Agder, 2021
 -------------------------------
-Faculty of Engineering and Sciences
-Department of Engineering and Sciences
+ - Faculty of Engineering and Sciences
+ - Department of Engineering and Sciences
 
 
 .. toctree::
