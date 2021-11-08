@@ -12,7 +12,7 @@
 
 .. raw:: html
 
-   <h2 style="text-align: center">University of Agder</h2>
+   <h2 style="text-align: center">University of Agder,2021</h2>
    <p style="text-align: center">Department of Engineering Sciences<br>Grimstad, Norway</p>
    
 |
@@ -24,7 +24,7 @@
 |
 |
 
-Course MAS-514 - Project Navigation Stak and SLAM
+Course MAS-514 - Project Navigation Stack and SLAM
 --------------
    - Hussam Haij
    - Mohammed Alsaadi
@@ -35,16 +35,12 @@ Course MAS-514 - Project Navigation Stak and SLAM
 
 
 SUPERVISOR
-- Daniel Hagen, PhD
+ - Daniel Hagen, PhD
 
 
 
 
 
-
-University of Agder, 2021
- - Faculty of Engineering and Sciences
- - Department of Engineering and Sciences
 
 
 .. toctree::
@@ -57,7 +53,8 @@ University of Agder, 2021
    src/web-controller
    src/troubleshooting
    src/calibration
-   src/Group
+   src/Project-Group2
+    
 
 
 .. Indices and tables
