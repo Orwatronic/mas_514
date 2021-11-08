@@ -6,10 +6,10 @@ The navigation stack uses tf to determine the robot's location in the world and 
 ## Using tf
 ## Writing the Code
 
-
-< include <ros/ros.h>
-< include <tf/transform_broadcaster.h>
-< include <nav_msgs/Odometry.h>
+{
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
 
 int main(int argc, char** argv){
   ros::init(argc, argv, "odometry_publisher");
@@ -31,7 +31,7 @@ int main(int argc, char** argv){
   last_time = ros::Time::now();
 
   ros::Rate r(1.0);
-  while(n.ok()){
+  while(n.ok())
 
     ros::spinOnce();               // check for incoming messages
     current_time = ros::Time::now();
