@@ -5,4 +5,4 @@ The navigation stack uses tf to determine the robot's location in the world and 
 ## Odometry Message
 ## Using tf
 ## Writing the Code
-.. literalinclude:: ../../Sphinx Doc/Odometry.py
+.. literalinclude:: Odometry.py
