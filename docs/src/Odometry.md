@@ -6,123 +6,83 @@ The navigation stack uses tf to determine the robot's location in the world and 
 ## Using tf
 ## Writing the Code
 
-import math
-from math import sin, cos, pi
-
-import rospy
-from std_msgs.msg import Int16
-import tf
-from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Point, Pose, Quaternion, Twist, Vector3
-
-
-#Initial values
-angle_left = 0.0
-angle_right = 0.0
-
-
-def left_wheel(angleL):
-    global angle_left
-    angle_left = angleL.data
-
-def right_wheel(angleR):
-    global angle_right
-    angle_right = angleR.data   
-
-if __name__ == '__main__':
-    try:
-        rospy.init_node('odometry_publisher')
-
-        odom_pub = rospy.Publisher("odom", Odometry, queue_size=50)
-        odom_broadcaster = tf.TransformBroadcaster()
-
-        subLeftWheel = rospy.Subscriber("angle_left_wheel", Int16, left_wheel)
-        subRightWheel = rospy.Subscriber("angle_right_wheel", Int16, right_wheel)
-        
-        #Jetbot parameters
-        b = 0.058
-        R = 0.03
-
-        angle2rad = (math.pi)/180
-        
-        #Initial values
-        x = 0.0
-        y = 0.0
-        th = 0.0
-        vx = 0
-        vy = 0
-        vth = 0
-        thetaL = 0.0
-        thetaR = 0.0
-        thetaL_old = 0.0
-        thetaR_old = 0.0
-
-        current_time = rospy.Time.now()
-        last_time = rospy.Time.now()
-
-        r = rospy.Rate(100)
-        while not rospy.is_shutdown():
-            current_time = rospy.Time.now()
-            dt = (current_time - last_time).to_sec()
-
-            # Convert Encoder signal in deg to rad
-            thetaL = -angle_left*angle2rad
-            thetaR = angle_right*angle2rad
-
-            # Estimate wheel velocity
-            omegaL = (thetaL - thetaL_old)/dt #rad/s
-            omegaR = (thetaR - thetaR_old)/dt
-            # Forward Kinematics
-            vth = (R/(2*b))*(omegaR-omegaL)
-            vx = 0.5*R*(omegaR + omegaL)
-            vy = 0.0
-
-            #print("omegaR")
-            #print(omegaR)
-
-            #print("omegaL:")
-            #print(omegaL)
-
-            # compute odometry in a typical way given the velocities of the robot
-            delta_x = (vx * cos(th)) * dt
-            delta_y = (vx * sin(th)) * dt
-            delta_th = vth * dt
-
-            x += delta_x
-            y += delta_y
-            th += delta_th
-
-            # since all odometry is 6DOF we'll need a quaternion created from yaw
-            odom_quat = tf.transformations.quaternion_from_euler(0, 0, th)
-
-            # first, we'll publish the transform over tf
-            odom_broadcaster.sendTransform(
-                (x, y, 0.),
-                odom_quat,
-                current_time,
-                "base_link",
-                "odom"
-            )
-
-            # next, we'll publish the odometry message over ROS
-            odom = Odometry()
-            odom.header.stamp = current_time
-            odom.header.frame_id = "odom"
-
-            # set the position
-            odom.pose.pose = Pose(Point(x, y, 0.), Quaternion(*odom_quat))
-
-            # set the velocity
-            odom.child_frame_id = "base_link"
-            odom.twist.twist = Twist(Vector3(vx, vy, 0), Vector3(0, 0, vth))
-
-            # publish the message
-            odom_pub.publish(odom)
-
-            last_time = current_time
-            thetaL_old = thetaL
-            thetaR_old = thetaR
-            r.sleep()
-
-    except rospy.ROSInterruptException:
-        pass
+   1 #include <ros/ros.h>
+   2 #include <tf/transform_broadcaster.h>
+   3 #include <nav_msgs/Odometry.h>
+   4 
+   5 int main(int argc, char** argv){
+   6   ros::init(argc, argv, "odometry_publisher");
+   7 
+   8   ros::NodeHandle n;
+   9   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
+  10   tf::TransformBroadcaster odom_broadcaster;
+  11 
+  12   double x = 0.0;
+  13   double y = 0.0;
+  14   double th = 0.0;
+  15 
+  16   double vx = 0.1;
+  17   double vy = -0.1;
+  18   double vth = 0.1;
+  19 
+  20   ros::Time current_time, last_time;
+  21   current_time = ros::Time::now();
+  22   last_time = ros::Time::now();
+  23 
+  24   ros::Rate r(1.0);
+  25   while(n.ok()){
+  26 
+  27     ros::spinOnce();               // check for incoming messages
+  28     current_time = ros::Time::now();
+  29 
+  30     //compute odometry in a typical way given the velocities of the robot
+  31     double dt = (current_time - last_time).toSec();
+  32     double delta_x = (vx * cos(th) - vy * sin(th)) * dt;
+  33     double delta_y = (vx * sin(th) + vy * cos(th)) * dt;
+  34     double delta_th = vth * dt;
+  35 
+  36     x += delta_x;
+  37     y += delta_y;
+  38     th += delta_th;
+  39 
+  40     //since all odometry is 6DOF we'll need a quaternion created from yaw
+  41     geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
+  42 
+  43     //first, we'll publish the transform over tf
+  44     geometry_msgs::TransformStamped odom_trans;
+  45     odom_trans.header.stamp = current_time;
+  46     odom_trans.header.frame_id = "odom";
+  47     odom_trans.child_frame_id = "base_link";
+  48 
+  49     odom_trans.transform.translation.x = x;
+  50     odom_trans.transform.translation.y = y;
+  51     odom_trans.transform.translation.z = 0.0;
+  52     odom_trans.transform.rotation = odom_quat;
+  53 
+  54     //send the transform
+  55     odom_broadcaster.sendTransform(odom_trans);
+  56 
+  57     //next, we'll publish the odometry message over ROS
+  58     nav_msgs::Odometry odom;
+  59     odom.header.stamp = current_time;
+  60     odom.header.frame_id = "odom";
+  61 
+  62     //set the position
+  63     odom.pose.pose.position.x = x;
+  64     odom.pose.pose.position.y = y;
+  65     odom.pose.pose.position.z = 0.0;
+  66     odom.pose.pose.orientation = odom_quat;
+  67 
+  68     //set the velocity
+  69     odom.child_frame_id = "base_link";
+  70     odom.twist.twist.linear.x = vx;
+  71     odom.twist.twist.linear.y = vy;
+  72     odom.twist.twist.angular.z = vth;
+  73 
+  74     //publish the message
+  75     odom_pub.publish(odom);
+  76 
+  77     last_time = current_time;
+  78     r.sleep();
+  79   }
+  80 }
