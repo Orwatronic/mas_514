@@ -71,4 +71,4 @@ If you are situated in a remote location with bad internet connection, WebViz ha
 - Launch the MAS514 package by `roslaunch mas514 start.launch`
 - Visit `http://jetbot-desktop<group-number>:8080` on the laptop which the Jetbot is connected to via  the mobile hotspot.
 - Select the desired image topic from the list and the video stream can be seen in real-time.
-moh
+![](../figs/webviz/webvizExample.png)
