@@ -1,7 +1,7 @@
 Navigation Stack
 ================ 
 
-.. figure:: ../docs/figs/Navigation_Stack.JPG/
+.. figure:: ../docs/figs/Navigation_Stack.JPG
 
 
 
