@@ -53,7 +53,7 @@ SUPERVISOR
    src/web-controller
    src/troubleshooting
    src/calibration
-   src/odometry
+   src/Odometry
    src/TEST
 
     
