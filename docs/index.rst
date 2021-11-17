@@ -51,7 +51,7 @@ SUPERVISOR
    src/report
    src/ros
    src/web-controller
-   src/troubleshooting
+   src/Navigation_Stack
    src/calibration
    src/Odometry
 
