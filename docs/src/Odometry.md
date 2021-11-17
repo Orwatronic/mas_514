@@ -8,3 +8,6 @@ The navigation stack uses tf to determine the robot's location in the world and 
 
 .. literalinclude:: ../../docs/figs/Code/Odometry.py
     :language: python
+
+
+![](../figs/just.JPG)
