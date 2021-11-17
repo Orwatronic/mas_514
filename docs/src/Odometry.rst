@@ -1,12 +1,26 @@
-Odometry
-===================
+Odometry Information
+=====================
 
-Puplishing
+The odometry information is needed for the navigation stack in order to work properly, and this information should be sent using tf and nav_msgs/odometry massages.
+To do so first, the odometry node should subscribe to the encoder node that built in Arduino using rosserial, to get the right and left angle for the wheels.
+
+Encoder Code
 ------------
 
-The navigation stack uses tf to determine the robot's location in the world and relate sensor data to a static map. However, tf does not provide any information about the velocity of the robot. Because of this, the navigation stack requires that any odometry source publish both a transform and a nav_msgs/Odometry message over ROS that contains velocity information. This tutorial explains the nav_msgs/Odometry message and provides example code for publishing both the message and transform over ROS and tf respectively.
+.. literalinclude:: ../../src/Encoder_Code.py
+    :language: python
+
+Odom Code
+-----------
+
+.. literalinclude:: ../../src/Node.py
+    :language: python
+
+And, we can add this code to a launch file in order to run several nodes at the same time.
+
+.. literalinclude:: ../../src/Launch_file_code.py
+    :language: python
 
 Odometry Message
 -----------------
-## Using tf
-## Writing the Code
+Using tf
