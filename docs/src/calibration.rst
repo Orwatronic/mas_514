@@ -39,7 +39,7 @@ If another image resolution is required, the color calibration has to be execute
 .. literalinclude:: ../../calibration/calibrateColor.py
     :language: python
 
-.. literalinclude:: ../../src/Odometryy.py
+.. literalinclude:: ../../calibration/Odometry.py
     :language: python
 
 
