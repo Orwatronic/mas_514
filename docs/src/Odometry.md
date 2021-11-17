@@ -10,4 +10,4 @@ The navigation stack uses tf to determine the robot's location in the world and 
     :language: python
 
 
-![](../figs/just.JPG)
+øslghsiorgfd: ![](../figs/just.JPG)
