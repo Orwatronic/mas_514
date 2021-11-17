@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import math
 from math import sin, cos, pi
 
