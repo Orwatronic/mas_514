@@ -5,7 +5,6 @@ Robot Setup
 ------------
 
 .. figure:: ../figs/Navigation_Stack.JPG
-   :
     :width: 500px
     :align: center
 
