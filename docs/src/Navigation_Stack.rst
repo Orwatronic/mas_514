@@ -1,9 +1,16 @@
 Navigation Stack
 ================ 
 
+Robot Setup
+------------
+
 .. figure:: ../figs/Navigation_Stack.JPG
 
-hghghghghghg
+.. figure:: ../figs/Navigation_Stack.JPG
+    :width: 500px
+    :align: center
+
+The navigation stack assumes that the robot is configured in a particular manner in order to run. The diagram above shows an overview of this configuration. The white components are required components that are already implemented, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform.
 
 
 
