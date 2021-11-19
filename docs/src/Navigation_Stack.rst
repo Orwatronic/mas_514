@@ -262,22 +262,42 @@ Hector SLAM (Mapping using only laser scan data)
 #. Set coordinate frames
     - :code:`$ sudo gedit ~/catkin_ws/src/hector_slam/hector_mapping/$launch/mapping_default.launch`
 
-- Search for these lines **(lines 5 and 6 in my code)**
+Search for these lines **(lines 5 and 6 in my code)**
     - :code:`<arg name="base_frame" default="base_footprint"/>`
     -:code:`<arg name="odom_frame" default="nav"/>`
 
-- Change those lines to this:
+Change those lines to this:
     -:code:`<arg name="base_frame" default="base_link"/>`
     - :code:`<arg name="odom_frame" default="base_link"/>`
 
-- Now go to the end of this file, and find these lines **(line 54 in my code)**.
+Now go to the end of this file, and find these lines **(line 54 in my code)**.
     - :code:`<!--<node pkg="tf" type="static_transform_publisher" name="map_nav_broadcaster" args="0 0 0 0 0 0 map nav 100"/> -->`
 
-- Change those lines to this (be sure to remove the comment tags (<!– and –>):
+Change those lines to this (be sure to remove the comment tags (<!– and –>):
     - :code:`<node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100"/>`
 
 Save the file, and return to the terminal window.
 
+Type the following command.
+    - :cod:`$ cd ~/catkin_ws/src/hector_slam/hector_slam_launch/launch`
+
+Open the tutorial.launch file.
+    - :code:`$ gedit tutorial.launch`
+
+Find this line (line 7 in my code).
+    - :code:`<param name="/use_sim_time" value="true"/>`
+
+Change that line to:
+    - :code:`<param name="/use_sim_time" value="false"/>`
+
+Save the file, and close it.
+
+Open a new terminal window, and type this command:
+    - :code:`cd ~/catkin_ws/`
+
+**If you see this error message…**
+
+“”Project ‘cv_bridge’ specifies ‘/usr/include/opencv’ as an include dir, which is not found. It does neither exist as an absolute directory nor in…””
 
 
 
