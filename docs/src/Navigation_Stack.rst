@@ -165,11 +165,11 @@ With the following code,
 
 Now, sense we have the needed data from the encoders, we need to build the odometry publisher node, to do this, follow **How to puplish odometry using wheel encoder position** guide. (note: place the odometry file in the guide inside “catkin_ws/src/mas514/src”)
 
-    - Now we need to add this to nodes to our launch file jetbot.launch 
+    Then we need to add this to nodes to our launch file jetbot.launch 
 
-        - :code:`roscd jetbot_nav` 
-        - :code:`cd launch` 
-        - :code:`gedit jetbot.launch`
+    - :code:`roscd jetbot_nav` 
+    - :code:`cd launch` 
+    - :code:`gedit jetbot.launch`
 
 And add the following:
 
@@ -184,7 +184,7 @@ And add the following:
     Save the file and close it.
 
     .. code-block::
-    
+
         <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
         <arg name="port" value="9090"/>
         </include> -->
