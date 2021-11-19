@@ -225,6 +225,24 @@ Using turtlebot3 packages we can control our robot and move around using the key
     - :code:`$roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
 
 If everything is works correctly, open a new terminal and write
+    - :code:`$ rostopic list`
+
+You should see **/cmd_vel** topic. To move the robot you can run this on another terminal
+    - :code:`$ roslaunch jetbot_nav jetbot.launch`
+
+**And run**
+    - :code:`$ rostopic list`
+
+To check if the following topics are running
+.. code-block::
+
+    /cmd_vel
+    /angle_left_wheel
+    /angle_rightwhell 
+    /odom
+    /servosetpoints
+
+    
 
 
 
