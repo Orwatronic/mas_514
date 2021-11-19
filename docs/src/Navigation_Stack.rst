@@ -15,8 +15,7 @@ The ROS Navigation Stack is a collection of software packages that you can use t
 In order to build the Navigation stack you have to build and set up several packages, as in the figure bellow, The white components are required components that are already implemented in Ros, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform. 
 
 .. figure:: ../figs/Navigation_Stack.JPG
-    :width: 500px
-    :align: center
+        :align: center
 
     Navigation Stack
 
