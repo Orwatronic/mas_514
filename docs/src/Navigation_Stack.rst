@@ -39,7 +39,7 @@ Now, let us build the navigation stack for Jetbot step by step.
         roscd jetbot_nav
         mkdir launch
         cd launch
-        
+
 
 - Create your launch file. Mine called jetbot.launch.
 
@@ -53,6 +53,55 @@ Now, let us build the navigation stack for Jetbot step by step.
 
         <launch>
         </launch>
+
+Save the file, and close it.
+
+Transform configuration
+------------------------
+
+The ros navigation stack require that we publish and set the relationship between the different coordinates frames of the robot using tf package. 
+
+- Open a terminal window and type:
+
+    .. code-block::
+
+        roscd jetbot_nav
+        cd launch
+
+- Open your launch file.
+
+    .. code-block::
+
+        gedit jetbot.launch
+
+- Add the following lines to configure the transformation frams between the different parts of the robot.
+
+    .. code-block::
+
+        <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames --> 
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
+<node pkg="tf" type="static_transform_publisher" name=" camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
+  <!-- map to odom will be provided by the AMCL -->
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+
+Save the file and close it.
+
+Sensor Information (laser scan information)
+--------------------------------------------
+
+The ROS Navigation Stack uses sensor information to help the robot avoid obstacles in the environment. It assumes that the sensor publishes either sensor_msgs/LaserScan or **sensor_msgs/PointCloud** messages over ROS.
+
+This can be done by following this guide :code:`setup_sensor_information`. Following this guide will create two packages one called realsense-ros and pointcloud to laser scan. Which will provided us with the needed nodes and topics for sensor information. However, we will need to do some changes to optimize the functionality of the sensor.
+
+
+
+
+
+
+
+
+
+
 
 
 
