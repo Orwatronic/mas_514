@@ -241,3 +241,25 @@ To check if the following topics are running
     /angle_rightwhell 
     /odom
     /servosetpoints
+
+ If everthings is ok, click inside the **roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch**  terminal and start moving the robot using your keyboard (W,X,A,D and S).  now since we can control the robot and move it around and we have the odometry and laser scan information, we can start mapping.
+
+ SLAM Mapping
+ -------------
+
+ There are sevral methods to build a map, we will go through two methods Hector-SLAM and Gmapping_SLAM. Hector-SLAM is an algorithm that uses laser scan data to create a map. The advantage of Hector-SLAM over other SLAM techniques is that it only requires laser scan data to do its job. It doesn’t need odometry data., where Gmapping needs both laser scan and odometry data to build a map. 
+
+Hector SLAM (Mapping using only laser scan data)
+-------------------------------------------------
+
+#. install Qt4
+    - :code:`$ sudo apt-get install qt4-qmake qt4-dev-tools`
+
+#. Download Hector SLAM package
+    - :code:`$ cd ~/catkin_ws/src`
+    - :code:`$ git clone https://github.com/tu-darmstadt-ros-pkg/hector_slam.git`
+
+    
+
+
+
