@@ -24,6 +24,13 @@ Now, let us build the navigation stack for Jetbot step by step. First, open your
 
 The navigation stack assumes that the robot is configured in a particular manner in order to run. The diagram above shows an overview of this configuration. The white components are required components that are already implemented, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform.
 
+.. code-block::
+
+        cd ~/catkin_ws/src
+        catkin_create_pkg jetbot_nav rospy roscpp std_msgs tf tf2_ros geometry_msgs sensor_msgs move_base
+        cd ~/catkin_ws/
+        catkin_make --only-pkg-with-deps jetbot_nav
+
 
 
 Troubleshooting
