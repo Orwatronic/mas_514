@@ -5,6 +5,8 @@ This inspired by :http://wiki.ros.org/navigation/Tutorials/RobotSetup
 https://hagenmek.gitlab.io/mas514/src/start.html
 https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/
 
+As start we assumed that you have mas514 package in your catkin work space if not please refer to the following link :https://hagenmek.gitlab.io/mas514/src/start.html
+
 Robot Setup
 ------------
 
