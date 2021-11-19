@@ -150,17 +150,11 @@ With the following code,
   and change the buad rate to 57600 and time interval to 30 ms, save, verify and upload to the Arduino.
 
   To verify if everything has been done correctly, open jetbot terminal and run the following 
-
     - :code:`roscore`
-
     Open a new terminal and run 
-
     - :code:`rosrun rosserial_arduino serial_node.py port:=/dev/ttyUSB0 _buad:=57600`
-
     Open a new terminal and run 
-
     - :code:`rostopic list`
-
     You should get **/angle_left_wheel and /angle_right_wheel**
 
 Now, sense we have the needed data from the encoders, we need to build the odometry publisher node, to do this, follow **How to puplish odometry using wheel encoder position** guide. (note: place the odometry file in the guide inside “catkin_ws/src/mas514/src”)
