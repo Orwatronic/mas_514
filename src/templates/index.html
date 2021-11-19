@@ -1,0 +1,146 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="{{ url_for('static', filename='js/nipplejs.js') }}"></script>
+    <style>
+        body {
+            overflow    : hidden;
+            padding     : 0;
+            margin      : 0;
+            background-color: rgb(0,0,0);
+            background-image: url('video_feed');
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 40%;
+        }
+
+        #right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+
+    <script>
+        var joystickL, joystickR;
+        var joystickL_xDist, joystickL_yDist, joystickR_xDist, joystickR_yDist;
+        var joystickL_Pre_xDist, joystickL_Pre_yDist, joystickR_Pre_xDist, joystickR_Pre_yDist;
+        var sendJoystickL_xDist, sendJoystickL_yDist, sendJoystickR_xDist, sendJoystickR_yDist;
+        var stop;
+
+        createNipple();
+
+        function createNipple () {
+            joystickL = nipplejs.create({
+                zone: document.getElementById('left'),
+                mode: 'dynamic',
+                color: 'blue',
+                position: { left: '20%', top: '50%' },
+                multitouch: true,
+            });
+
+            joystickR = nipplejs.create({
+                zone: document.getElementById('right'),
+                mode: 'dynamic',
+                color: 'red',
+                position: { left: '80%', top: '50%' },
+                multitouch: true
+            });
+            bindNipple();
+
+        }
+
+        function bindNipple () {
+            joystickL.on('start', function (evt, data) {
+                var dat = data['position'];
+                joystickL_xDist = dat['x'];
+                joystickL_yDist = dat['y'];
+                stop = false;
+
+            }).on('move', function (evt, data) {
+                console.log('move');
+                GetjoystickL_Data(data);
+            }).on('end', function (evt, data) {
+                console.log('ending');
+                sendJoystickL_xDist = 0;
+                sendJoystickL_yDist = 0;
+            });
+
+            joystickR.on('start', function (evt, data) {
+                var dat = data['position'];
+                joystickR_xDist = dat['x'];
+                joystickR_yDist = dat['y'];
+            }).on('move', function (evt, data) {
+                GetjoystickR_Data(data);
+            }).on('end', function (evt, data) {
+                console.log('ending');
+                sendJoystickR_xDist = 0;
+                sendJoystickR_yDist = 0;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "./ServoMotor?x_dist=0&y_dist=0")
+                xhr.send();                    
+            });
+        }
+
+        function GetjoystickL_Data (obj) {
+            var dat = obj['position'];
+            var x = dat['x'];
+            var y = dat['y'];
+
+            sendJoystickL_xDist = Math.round(x-joystickL_xDist);
+            sendJoystickL_yDist = Math.round(y-joystickL_yDist);
+        }
+
+        function GetjoystickR_Data (obj) {
+            var dat = obj['position'];
+            var x = dat['x'];
+            var y = dat['y'];
+
+            sendJoystickR_xDist = Math.round(x-joystickR_xDist);
+            sendJoystickR_yDist = Math.round(y-joystickR_yDist);
+        }
+
+        setInterval(function () {
+            if(joystickL_Pre_xDist!= sendJoystickL_xDist || joystickL_Pre_yDist != sendJoystickL_yDist){
+                joystickL_Pre_xDist = sendJoystickL_xDist;
+                joystickL_Pre_yDist = sendJoystickL_yDist;       
+                console.log(sendJoystickL_xDist, sendJoystickL_yDist);                 
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "./left_stick?x=" + (sendJoystickL_xDist) + '&y=' + (sendJoystickL_yDist))
+                xhr.send();
+            }
+
+            if(joystickR_Pre_xDist!= sendJoystickR_xDist || joystickR_Pre_yDist != sendJoystickR_yDist){
+                joystickR_Pre_xDist = sendJoystickR_xDist;
+                joystickR_Pre_yDist = sendJoystickR_yDist;       
+                console.log(sendJoystickR_xDist, sendJoystickR_yDist);                 
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "./right_stick?x=" + (sendJoystickR_xDist) + '&y=' + (sendJoystickR_yDist))
+                xhr.send();
+            }
+    
+        }, 100);
+
+    </script>
+
+</body>
+</html>
