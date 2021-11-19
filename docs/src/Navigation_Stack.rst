@@ -122,14 +122,26 @@ You should find a topic called :code:`“/scan”`. Now, sensor information read
 Odometry Information (odometry source) 
 --------------------------------------
 
-The navigation stack requires that odometry information be published using **tf** and the **nav_msgs/Odometry** message. To do so first, the odometry node should subscribe to the encoder node that built in Arduino using rosserial, to get the right and left angle for the wheels. This can be done by following **How to Publish Wheel Encoder Data Using Ros and Arduino**. By doing this guide you will be able to publish two topics **/angle_right_wheel and /angle_left_wheel**, which is need for to publish the odometry information. However to optimize the data, we have to make some changes. First we will add two pass filter to the data of the angle, under ** // Function for reading right wheel angle and number of turns**
+The navigation stack requires that odometry information be published using **tf** and the **nav_msgs/Odometry** message. To do so first, the odometry node should subscribe to the encoder node that built in Arduino using rosserial, to get the right and left angle for the wheels. This can be done by following **How to Publish Wheel Encoder Data Using Ros and Arduino**. By doing this guide you will be able to publish two topics **/angle_right_wheel and /angle_left_wheel**, which is need for to publish the odometry information. However to optimize the data, we have to make some changes. First we will add two pass filter to the data of the angle, under **// Function for reading right wheel angle and number of turns**
 
-In encoder_ros.ino file replace     :code: `angleRight.data = angle_right;` 
+In encoder_ros.ino file replace     :code:`angleRight.data = angle_right;` 
 
 With the following code:
-    :code: `angle_right1 = fGain*angle_right1 + (1-fGain)*angle_right;`
-    :code: `angle_right2 = fGain*angle_right2 + (1-fGain)*angle_right1;`
-    :code: `angleRight.data = angle_right2;`
+    - :code:`angle_right1 = fGain*angle_right1 + (1-fGain)*angle_right;`
+    - :code:`angle_right2 = fGain*angle_right2 + (1-fGain)*angle_right1;`
+    - :code:`angleRight.data = angle_right2;`
+
+
+
+
+
+
+
+
+
+
+
+    
 
 Troubleshooting
 -----------------
