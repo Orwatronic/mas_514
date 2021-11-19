@@ -98,7 +98,7 @@ The ROS Navigation Stack uses sensor information to help the robot avoid obstacl
 
 This can be done by following this guide :code:`setup_sensor_information`. Following this guide will create two packages one called realsense-ros and pointcloud to laser scan. Which will provided us with the needed nodes and topics for sensor information. However, we will need to do some changes to optimize the functionality of the sensor.
 
-
+Open file `catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch` , and scroll to line 46 and set enable pointcloud to **true** , and line 47 replace `“RS”_STREAM_COLOR` to `“RS”_STREAM_ANY”`, save the file and close it .
 
 
 
