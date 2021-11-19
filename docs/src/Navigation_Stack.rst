@@ -124,7 +124,7 @@ Odometry Information (odometry source)
 
 The navigation stack requires that odometry information be published using **tf** and the **nav_msgs/Odometry** message. To do so first, the odometry node should subscribe to the encoder node that built in Arduino using rosserial, to get the right and left angle for the wheels. This can be done by following **How to Publish Wheel Encoder Data Using Ros and Arduino**. By doing this guide you will be able to publish two topics **/angle_right_wheel and /angle_left_wheel**, which is need for to publish the odometry information. However to optimize the data, we have to make some changes. First we will add two pass filter to the data of the angle, under **// Function for reading right wheel angle and number of turns**
 
-In encoder_ros.ino file replace     :code:`angleRight.data = angle_right;` 
+In encoder_ros.ino file replace :code:`angleRight.data = angle_right;` 
 
 With the following code:
     - :code:`angle_right1 = fGain*angle_right1 + (1-fGain)*angle_right;`
@@ -170,6 +170,41 @@ Now, sense we have the needed data from the encoders, we need to build the odome
         - :code:`roscd jetbot_nav` 
         - :code:`cd launch` 
         - :code:`gedit jetbot.launch`
+
+And add the following:
+
+    .. code-block::
+        <!—Wheel odometry publisher -->
+        <node name="Odometry" pkg="mas514" type="Odometry.py" output="screen"/>
+        <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/ttyUSB0"/>
+        <param name="baud" value="57600"/>
+
+    Save the file and close it.
+
+    .. code-block::
+        <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+        <arg name="port" value="9090"/>
+        </include> -->
+        <!-- <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" out-put="screen"/>  -->
+        </launch>
+
+
+Now in order to verfiy everything is ok, launch jetbot.launch file
+        - :code:`roslaunch jetbot_nav jetbot.launch`
+        - :code:`rostopic list`
+
+        You should have **/odom** topic, now the odometry information is ready.
+
+
+
+
+
+
+
+
+
+
 
 
 
