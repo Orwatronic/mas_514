@@ -259,7 +259,25 @@ Hector SLAM (Mapping using only laser scan data)
     - :code:`$ cd ~/catkin_ws/src`
     - :code:`$ git clone https://github.com/tu-darmstadt-ros-pkg/hector_slam.git`
 
-    
+#. Set coordinate frames
+    - :code:`$ sudo gedit ~/catkin_ws/src/hector_slam/hector_mapping/$launch/mapping_default.launch`
+
+- Search for these lines **(lines 5 and 6 in my code)**
+    - :code:`<arg name="base_frame" default="base_footprint"/>`
+    -:code:`<arg name="odom_frame" default="nav"/>`
+
+- Change those lines to this:
+    -:code:`<arg name="base_frame" default="base_link"/>`
+    - :code:`<arg name="odom_frame" default="base_link"/>`
+
+- Now go to the end of this file, and find these lines **(line 54 in my code)**.
+    - :code:`<!--<node pkg="tf" type="static_transform_publisher" name="map_nav_broadcaster" args="0 0 0 0 0 0 map nav 100"/> -->`
+
+- Change those lines to this (be sure to remove the comment tags (<!– and –>):
+    - :code:`<node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100"/>`
+
+Save the file, and return to the terminal window.
+
 
 
 
