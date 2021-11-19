@@ -15,7 +15,7 @@ The ROS Navigation Stack is a collection of software packages that you can use t
 In order to build the Navigation stack you have to build and set up several packages, as in the figure bellow, The white components are required components that are already implemented in Ros, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform. 
 
 .. figure:: ../figs/Navigation_Stack.JPG
-        :align: center
+    :figclass: align-center
 
     Navigation Stack
 
@@ -192,10 +192,23 @@ And add the following:
 
 
 Now in order to verfiy everything is ok, launch jetbot.launch file
-        - :code:`roslaunch jetbot_nav jetbot.launch`
-        - :code:`rostopic list`
+    - :code:`roslaunch jetbot_nav jetbot.launch`
+    - :code:`rostopic list`
 
-        You should have **/odom** topic, now the odometry information is ready.
+    You should have **/odom** topic, now the odometry information is ready.
+
+Base controller
+----------------
+
+The ROS Navigation Stack requires a node that subscribes to the “cmd_vel” (i.e. velocity command) topic that takes velocities and converts them into motor commands. Since, this guide assumed that you already cloned mas514 package (if not please refer to https://hagenmek.gitlab.io/mas514/src/start.html), then you have InverseKinematics.py file inside “mas514/src”, which we will edit it so it subscribe to the “/cmd_vel” topic published by the move_bose node (built in package in Ros publishes “/cmd_vel” topic, refer to the figure at the beginning of this guide ), and to change this file copy this code  and replace it, this will publish servo set point that needed in jetbot controller to give the motors command.   
+
+Now, we have to add this nodes to our launch file :code:`“jetbot.launch”`
+
+Open new terminal and run this
+- :code:`roscd jetbot_nav`
+- :code:`cd launch`
+_ :code:`gedit jetbot.launch`
+
 
 
 
