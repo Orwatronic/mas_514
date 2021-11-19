@@ -22,7 +22,7 @@ In order to build the Navigation stack you have to build and set up several pack
 
 Now, let us build the navigation stack for Jetbot step by step. 
 
-- First, open your Jetbot terminal   and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
+    - First, open your Jetbot terminal  and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
 
 .. code-block::
 
@@ -30,6 +30,27 @@ Now, let us build the navigation stack for Jetbot step by step.
         catkin_create_pkg jetbot_nav rospy roscpp std_msgs tf tf2_ros geometry_msgs sensor_msgs move_base
         cd ~/catkin_ws/
         catkin_make --only-pkg-with-deps jetbot_nav
+
+    - Now we’re going to put together our launch file. Open a new terminal window, and move to your jetbot_nav package.
+
+    .. code-block::
+
+        roscd jetbot_nav
+        mkdir launch
+        cd launch
+
+    - Create your launch file. Mine called jetbot.launch.
+
+    .. code-block::
+
+        gedit jetbot.launch
+
+    -  Add the following code:
+
+    .. code-block::
+
+        <launch>
+        </launch>
 
 
 
