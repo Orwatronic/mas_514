@@ -220,6 +220,12 @@ Save and close it. So far we can move the robot if we are able to send velocity 
 Teleoperation using keyboard
 ------------------------------
 
+Using turtlebot3 packages we can control our robot and move around using the keyboard, to do so, go to this guide and do 1a (set up), after you have done that. Open new terminal and run the following 
+    - :code:`$export TURTLEBOT3_MODEL=burger`
+    - :code:`$roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
+
+If everything is works correctly, open a new terminal and write
+
 
 
 
