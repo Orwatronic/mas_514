@@ -174,6 +174,7 @@ Now, sense we have the needed data from the encoders, we need to build the odome
 And add the following:
 
     .. code-block::
+
         <!—Wheel odometry publisher -->
         <node name="Odometry" pkg="mas514" type="Odometry.py" output="screen"/>
         <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
@@ -183,6 +184,7 @@ And add the following:
     Save the file and close it.
 
     .. code-block::
+    
         <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
         <arg name="port" value="9090"/>
         </include> -->
