@@ -80,14 +80,14 @@ The ros navigation stack require that we publish and set the relationship betwee
 
         <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames --> 
 
-  <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
+        <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
 
-<node pkg="tf" type="static_transform_publisher" name=" camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
+        <node pkg="tf" type="static_transform_publisher" name=" camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
 
-  <!-- map to odom will be provided by the AMCL -->
+        <!-- map to odom will be provided by the AMCL -->
 
-  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
-  
+        <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+
 
 Save the file and close it.
 
