@@ -1,0 +1,44 @@
+<launch>
+
+    <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames --> 
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
+    <node pkg="tf" type="static_transform_publisher" name="camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
+
+    <!--  Wheel Odometry Publisher -->
+    <node name="Odometry" pkg="mas514" type="Odometry.py" output="screen"/>
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="baud" value="57600"/>
+    </node>
+
+  
+    <!-- Initial Pose and Goal Publisher -->
+    <!-- Publish: /initialpose, /move_base_simple/goal -->
+    <node pkg="rviz" type="rviz" name="rviz">
+    </node>
+
+    <!-- Subscribe: /initialpose, /move_base_simple/goal -->
+    <!-- Publish: /initial_2d, /goal_2d -->
+    <node pkg="localization" type="rviz_click_to_2d" name="rviz_click_to_2d">
+    </node>   
+
+    <!-- <node name="JetbotCamera" pkg="mas514" type="JetbotCamera.py" output="screen"/> -->
+     <!-- <node name="ImageSaver" pkg="mas514" type="ImageSaver.py" output="screen"/> -->
+    <node name="JetbotController" pkg="mas514" type="JetbotController.py" output="screen"/>
+    <node name="MainController" pkg="mas514" type="MainController.py" output="screen"/> 
+    <node name="WebController" pkg="mas514" type="WebController.py" output="screen"/>
+    <node name="node_web_video_server" pkg="web_video_server" type="web_video_server"/> 
+
+
+
+    <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+        <arg name="port" value="9090"/>
+    </include> -->
+
+    <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" output="screen"/> 
+
+
+
+
+</launch>

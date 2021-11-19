@@ -1,0 +1,8 @@
+prefix=/home/jetbot/catkin_ws/install
+
+Name: mas514
+Description: Description of mas514
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: rospy cv_bridge std_msgs

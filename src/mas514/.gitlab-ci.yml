@@ -1,0 +1,15 @@
+image: sphinxdoc/sphinx
+
+pages:
+  stage: deploy  
+  script:
+  - pip install -U recommonmark
+  - pip install -U sphinx
+  - pip install -U sphinx-rtd-theme
+  - pip install -U sphinxcontrib-bibtex
+  - sphinx-build -b html ./docs public
+  artifacts:
+    paths:
+    - public
+  only:
+  - A2021
