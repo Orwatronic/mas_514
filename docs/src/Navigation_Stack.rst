@@ -24,35 +24,35 @@ Now, let us build the navigation stack for Jetbot step by step.
 
 - First, open your Jetbot terminal  and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
 
-    .. code-block::
+.. code-block::
 
-        cd ~/catkin_ws/src
-        catkin_create_pkg jetbot_nav rospy roscpp std_msgs tf tf2_ros geometry_msgs sensor_msgs move_base
-        cd ~/catkin_ws/
-        catkin_make --only-pkg-with-deps jetbot_nav
+    cd ~/catkin_ws/src
+    catkin_create_pkg jetbot_nav rospy roscpp std_msgs tf tf2_ros geometry_msgs sensor_msgs move_base
+    cd ~/catkin_ws/
+    catkin_make --only-pkg-with-deps jetbot_nav
 
 
 - Now we’re going to put together our launch file. Open a new terminal window, and move to your jetbot_nav package.
 
-    .. code-block::
+.. code-block::
 
-        roscd jetbot_nav
-        mkdir launch
-        cd launch
+    roscd jetbot_nav
+    mkdir launch
+    cd launch
 
 
 - Create your launch file. Mine called jetbot.launch.
 
-    .. code-block::
+.. code-block::
 
-        gedit jetbot.launch
+    gedit jetbot.launch
 
 -  Add the following code:
 
-    .. code-block::
+.. code-block::
 
-        <launch>
-        </launch>
+    <launch>
+    </launch>
 
 Save the file, and close it.
 
@@ -63,30 +63,30 @@ The ros navigation stack require that we publish and set the relationship betwee
 
 - Open a terminal window and type:
 
-    .. code-block::
+.. code-block::
 
-        roscd jetbot_nav
-        cd launch
+    roscd jetbot_nav
+    cd launch
 
 - Open your launch file.
 
-    .. code-block::
+.. code-block::
 
-        gedit jetbot.launch
+    gedit jetbot.launch
 
 - Add the following lines to configure the transformation frams between the different parts of the robot.
 
-    .. code-block::
+.. code-block::
 
-        <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames --> 
+    <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames --> 
 
-        <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" args="0.06 0 0.08 0 0 0 base_link camera_link 30" />
 
-        <node pkg="tf" type="static_transform_publisher" name=" camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
+    <node pkg="tf" type="static_transform_publisher" name=" camera_link_to_laser" args="0 0 0 0 0 0 camera_link laser 30" />
 
-        <!-- map to odom will be provided by the AMCL -->
+    <!-- map to odom will be provided by the AMCL -->
 
-        <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
 
 
 Save the file and close it.
@@ -104,18 +104,18 @@ Open file catkin_wss/src/pointcloud_to_laserscan/launch/sample_node.launch, and 
 
 Now open terminal and navigate to the launch folder in jetbot_nav  and create a second launch file called laser.launch, as follow:
 
-    .. code-block::
+.. code-block::
 
-        roscd jetbot_nav 
-        cd launch 
-        gedit laser.launch
+    roscd jetbot_nav 
+    cd launch 
+    gedit laser.launch
 
 Copy both lunch files rs_camera.launch in catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch,  and sample_node.launch in  catkin_wss/src/pointcloud_to_laserscan/launch/sample_node.launch, and paste them in laser.launch file, save and close. To check if it works you can, excute this code in the terminl.
 
-    .. code-block::
+.. code-block::
 
-        roslaunch jetbot_nav laser.launch
-        rostopic list
+    roslaunch jetbot_nav laser.launch
+    rostopic list
 
 You should find a topic called :code:`“/scan”`. Now, sensor information ready to use and we have the need topic which called :code:`“scan”`. 
 
@@ -173,13 +173,13 @@ Now, sense we have the needed data from the encoders, we need to build the odome
 
 And add the following:
 
-    .. code-block::
+.. code-block::
 
-        <!—Wheel odometry publisher -->
-        <node name="Odometry" pkg="mas514" type="Odometry.py" output="screen"/>
-        <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
-        <param name="port" value="/dev/ttyUSB0"/>
-        <param name="baud" value="57600"/>
+    <!—Wheel odometry publisher -->
+    <node name="Odometry" pkg="mas514" type="Odometry.py" output="screen"/>
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="baud" value="57600"/>
 
     Save the file and close it.
 
