@@ -98,11 +98,26 @@ The ROS Navigation Stack uses sensor information to help the robot avoid obstacl
 
 This can be done by following this guide :code:`setup_sensor_information`. Following this guide will create two packages one called realsense-ros and pointcloud to laser scan. Which will provided us with the needed nodes and topics for sensor information. However, we will need to do some changes to optimize the functionality of the sensor.
 
-Open file :code:`catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch` , and scroll to line 46 and set enable pointcloud to **true** , and line 47 replace :code:`“RS”_STREAM_COLOR` to :code:`“RS”_STREAM_ANY”`, save the file and close it .
+Open file :code:`catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch` , and scroll to line 46 and set enable pointcloud to **true** , and line 47 replace :code:`“RS”_STREAM_COLOR` to :code:`“RS”_STREAM_ANY”`, save the file and close it.
 
+Open file catkin_wss/src/pointcloud_to_laserscan/launch/sample_node.launch, and scroll to line 26 and change concurrency_level : 1 ,and to line 6 and change “camera/scan” to “scan” save the file and close it.
 
+Now open terminal and navigate to the launch folder in jetbot_nav  and create a second launch file called laser.launch, as follow:
 
+    .. code-block::
 
+        roscd jetbot_nav 
+        cd launch 
+        gedit laser.launch
+
+Copy both lunch files rs_camera.launch in catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch,  and sample_node.launch in  catkin_wss/src/pointcloud_to_laserscan/launch/sample_node.launch, and paste them in laser.launch file, save and close. To check if it works you can, excute this code in the terminl.
+
+    .. code-block::
+
+        roslaunch jetbot_nav laser.launch
+        rostopic list
+
+You should find a topic called :code:`“/scan”`. Now, sensor information ready to use and we have the need topic which called :code:`“scan”`. 
 
 
 
