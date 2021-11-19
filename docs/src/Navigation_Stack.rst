@@ -205,9 +205,21 @@ The ROS Navigation Stack requires a node that subscribes to the “cmd_vel” (i
 Now, we have to add this nodes to our launch file :code:`“jetbot.launch”`
 
 Open new terminal and run this
-- :code:`roscd jetbot_nav`
-- :code:`cd launch`
-_ :code:`gedit jetbot.launch`
+    - :code:`roscd jetbot_nav`
+    - :code:`cd launch`
+    - :code:`gedit jetbot.launch`
+
+Add these two lines under the Odometry.py node
+.. code-block::
+
+    <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" output="screen"/>
+    <node name="JetbotController " pkg="mas514" type="JetbotController.py" output="screen"/>  
+
+Save and close it. So far we can move the robot if we are able to send velocity commands over the “/cmd_vel” topic , and publish  the odometry information over “/odom” topic, and publish the laser scan data over the “/scan” topic. To check everything, we can use the keyboard to send data over /cmd_vel and check.
+
+Teleoperation using keyboard
+------------------------------
+
 
 
 
