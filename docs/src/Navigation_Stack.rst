@@ -6,9 +6,8 @@ https://hagenmek.gitlab.io/mas514/src/start.html
 https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/
 
 As start we assumed that you have mas514 package in your catkin work space if not please refer to the following link :https://hagenmek.gitlab.io/mas514/src/start.html
-
-Robot Setup
-------------
+The ROS Navigation Stack is a collection of software packages that you can use to help your robot move from a starting location to a goal location safely.
+In order to build the Navigation stack you have to build and set up several packages, as in the figure bellow, The white components are required components that are already implemented in Ros, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform. 
 
 .. figure:: ../figs/Navigation_Stack.JPG
     :width: 500px
@@ -16,9 +15,9 @@ Robot Setup
 
     * Navigation Stack*
 
+Now, let us build the navigation stack for Jetbot step by step. First, open your Jetbot terminal   and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
+
 The navigation stack assumes that the robot is configured in a particular manner in order to run. The diagram above shows an overview of this configuration. The white components are required components that are already implemented, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform.
-
-
 
 
 
