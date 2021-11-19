@@ -2,6 +2,8 @@ Navigation Stack
 ================ 
 
 This inspired by :http://wiki.ros.org/navigation/Tutorials/RobotSetup
+https://hagenmek.gitlab.io/mas514/src/start.html
+https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/
 
 Robot Setup
 ------------
