@@ -20,9 +20,9 @@ In order to build the Navigation stack you have to build and set up several pack
 
     Navigation Stack
 
-Now, let us build the navigation stack for Jetbot step by step. First, open your Jetbot terminal   and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
+Now, let us build the navigation stack for Jetbot step by step. 
 
-The navigation stack assumes that the robot is configured in a particular manner in order to run. The diagram above shows an overview of this configuration. The white components are required components that are already implemented, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform.
+- First, open your Jetbot terminal   and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
 
 .. code-block::
 
