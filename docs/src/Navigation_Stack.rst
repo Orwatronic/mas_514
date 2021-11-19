@@ -24,7 +24,7 @@ Now, let us build the navigation stack for Jetbot step by step.
 
 - First, open your Jetbot terminal  and navigate to your workspace create the first package for navigation, for me it’s called jetbot_nav, then build it
 
-.. code-block::
+    .. code-block::
 
         cd ~/catkin_ws/src
         catkin_create_pkg jetbot_nav rospy roscpp std_msgs tf tf2_ros geometry_msgs sensor_msgs move_base
@@ -98,7 +98,7 @@ The ROS Navigation Stack uses sensor information to help the robot avoid obstacl
 
 This can be done by following this guide :code:`setup_sensor_information`. Following this guide will create two packages one called realsense-ros and pointcloud to laser scan. Which will provided us with the needed nodes and topics for sensor information. However, we will need to do some changes to optimize the functionality of the sensor.
 
-Open file `catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch` , and scroll to line 46 and set enable pointcloud to **true** , and line 47 replace `“RS”_STREAM_COLOR` to `“RS”_STREAM_ANY”`, save the file and close it .
+Open file :code:`catkin_wss/src/realsense-ros/realsense2_camera/launch/rs_camera.launch` , and scroll to line 46 and set enable pointcloud to **true** , and line 47 replace :code:`“RS”_STREAM_COLOR` to :code:`“RS”_STREAM_ANY”`, save the file and close it .
 
 
 
