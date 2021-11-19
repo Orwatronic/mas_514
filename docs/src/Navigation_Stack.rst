@@ -131,6 +131,22 @@ With the following code:
     - :code:`angle_right2 = fGain*angle_right2 + (1-fGain)*angle_right1;`
     - :code:`angleRight.data = angle_right2;`
 
+and under **// Function for reading left wheel angle and number of turns**
+
+replace :code:`angleLeft.data = angle_Left;`
+
+With the following code,
+
+    - :code:`angle_left1 = fGain*angle_left1 + (1-fGain)*angle_left;`
+    - :code:`angle_left2 = fGain*angle_left2 + (1-fGain)*angle_left;`
+    - :code:`angleLEFT.data = angle_left2;`
+
+    and add this under variable at the beginning of the code
+
+    - :code:`static volatile int angle_left, angle_left1, angle_left2;`
+    - :code:`static volatile int angle_right, angle_right1, angle_right2;`
+and this under parameters
+    - :code:`static const float fGain = 0.98;`
 
 
 
@@ -141,7 +157,7 @@ With the following code:
 
 
 
-    
+
 
 Troubleshooting
 -----------------
