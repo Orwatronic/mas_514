@@ -183,13 +183,13 @@ And add the following:
 
     Save the file and close it.
 
-    .. code-block::
+.. code-block::
 
-        <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
-        <arg name="port" value="9090"/>
-        </include> -->
-        <!-- <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" out-put="screen"/>  -->
-        </launch>
+    <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+    <arg name="port" value="9090"/>
+    </include> -->
+    <!-- <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" out-put="screen"/>  -->
+    </launch>
 
 
 Now in order to verfiy everything is ok, launch jetbot.launch file
