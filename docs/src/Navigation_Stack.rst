@@ -126,7 +126,10 @@ The navigation stack requires that odometry information be published using **tf*
 
 In encoder_ros.ino file replace     :code: `angleRight.data = angle_right;` 
 
-
+With the following code:
+    :code: `angle_right1 = fGain*angle_right1 + (1-fGain)*angle_right;`
+    :code: `angle_right2 = fGain*angle_right2 + (1-fGain)*angle_right1;`
+    :code: `angleRight.data = angle_right2;`
 
 Troubleshooting
 -----------------
