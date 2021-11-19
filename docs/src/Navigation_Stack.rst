@@ -1,6 +1,8 @@
 Navigation Stack
 ================ 
 
+This inspired by :http://wiki.ros.org/navigation/Tutorials/RobotSetup
+
 Robot Setup
 ------------
 
