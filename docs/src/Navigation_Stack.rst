@@ -3,14 +3,14 @@ Navigation Stack
 
 This inspired by :
 
-- http://wiki.ros.org/navigation/Tutorials/RobotSetup.
+- http://wiki.ros.org/navigation/Tutorials/RobotSetup
 
-- https://hagenmek.gitlab.io/mas514/src/start.html.
+- https://hagenmek.gitlab.io/mas514/src/start.html
 
-- https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/.
-
+- https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/
 
 As start we assumed that you have mas514 package in your catkin work space if not please refer to the following link :https://hagenmek.gitlab.io/mas514/src/start.html.
+
 The ROS Navigation Stack is a collection of software packages that you can use to help your robot move from a starting location to a goal location safely.
 In order to build the Navigation stack you have to build and set up several packages, as in the figure bellow, The white components are required components that are already implemented in Ros, the gray components are optional components that are already implemented, and the blue components must be created for each robot platform. 
 
