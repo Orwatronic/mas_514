@@ -324,6 +324,9 @@ Hector SLAM (Mapping using only laser scan data)
     4- $ roslaunch jetbot_nav laser.launch
     5- $ roslaunch hector_slam_launch tutorial.launch
 
+#. Save the Map
+    1- install map server
+
 
 
 
