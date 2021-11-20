@@ -50,7 +50,6 @@ SUPERVISOR
    src/start
    src/report
    src/ros
-   src/web-controller
    src/Navigation_Stack
    src/Odometry
 
