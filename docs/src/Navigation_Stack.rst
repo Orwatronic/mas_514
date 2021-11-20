@@ -210,6 +210,7 @@ Open new terminal and run this
     - :code:`gedit jetbot.launch`
 
 Add these two lines under the Odometry.py node
+
 .. code-block::
 
     <node name="InverseKinematics" pkg="mas514" type="InverseKinematics.py" output="screen"/>
@@ -262,58 +263,59 @@ Hector SLAM (Mapping using only laser scan data)
 #. Set coordinate frames
     - :code:`$ sudo gedit ~/catkin_ws/src/hector_slam/hector_mapping/$launch/mapping_default.launch`
 
-Search for these lines **(lines 5 and 6 in my code)**
+ Search for these lines **(lines 5 and 6 in my code)**
     - :code:`<arg name="base_frame" default="base_footprint"/>`
     -:code:`<arg name="odom_frame" default="nav"/>`
 
-Change those lines to this:
+ Change those lines to this:
     -:code:`<arg name="base_frame" default="base_link"/>`
     - :code:`<arg name="odom_frame" default="base_link"/>`
 
-Now go to the end of this file, and find these lines **(line 54 in my code)**.
+ Now go to the end of this file, and find these lines **(line 54 in my code)**.
     - :code:`<!--<node pkg="tf" type="static_transform_publisher" name="map_nav_broadcaster" args="0 0 0 0 0 0 map nav 100"/> -->`
 
-Change those lines to this (be sure to remove the comment tags (<!– and –>):
+ Change those lines to this (be sure to remove the comment tags (<!– and –>):
     - :code:`<node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100"/>`
 
-Save the file, and return to the terminal window.
+ Save the file, and return to the terminal window.
 
-Type the following command.
+ Type the following command.
     - :code:`$ cd ~/catkin_ws/src/hector_slam/hector_slam_launch/launch`
 
-Open the tutorial.launch file.
+ Open the tutorial.launch file.
     - :code:`$ gedit tutorial.launch`
 
-Find this line (line 7 in my code).
+ Find this line (line 7 in my code).
     - :code:`<param name="/use_sim_time" value="true"/>`
 
-Change that line to:
+ Change that line to:
     - :code:`<param name="/use_sim_time" value="false"/>`
 
-Save the file, and close it.
+ Save the file, and close it.
 
-Open a new terminal window, and type this command:
+ Open a new terminal window, and type this command:
     - :code:`cd ~/catkin_ws/`
 
-**If you see this error message…**
+ **If you see this error message…**
 
-“”Project ‘cv_bridge’ specifies ‘/usr/include/opencv’ as an include dir, which is not found. It does neither exist as an absolute directory nor in…””
+ “”Project ‘cv_bridge’ specifies ‘/usr/include/opencv’ as an include dir, which is not found. It does neither exist as an absolute directory nor in…””
     - :code:`$ cd /usr/include`
     - :code:`$ sudo ln -s opencv4/ opencv`
 
-Build the packages again.
+ Build the packages again.
     - :code:`$cd ~/catkin_ws/`
     - :code:`$catkin_make`
 
-Shutdown then turn the Jetson Nano on again.
+ Shutdown then turn the Jetson Nano on again.
     - :code:`$ sudo shutdown -h now`
 
-**Open a new terminal window, and launch RPLIDAR**
+ **Open a new terminal window, and launch RPLIDAR**
     - :code:`$ cd ~/catkin_ws/`
     - :code:`$sudo chmod 666 /dev/ttyUSB0`
 
 #. Mapping using Hector SLAM **(only needs laser scan data)**
-.. code-block::
+
+ .. code-block::
 
     1- $ roscore
     2- $ rosrun tf static_transform_publisher 0 0 0 0 0 0 map scanmatcher_frame 10
