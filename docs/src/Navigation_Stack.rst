@@ -243,10 +243,11 @@ To check if the following topics are running
     /odom
     /servosetpoints
 
- If everthings is ok, click inside the **roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch**  terminal and start moving the robot using your keyboard (W,X,A,D and S).  now since we can control the robot and move it around and we have the odometry and laser scan information, we can start mapping.
 
- SLAM Mapping
- -------------
+If everthings is ok, click inside the **roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch**  terminal and start moving the robot using your keyboard (W,X,A,D and S).  now since we can control the robot and move it around and we have the odometry and laser scan information, we can start mapping.
+
+SLAM Mapping
+--------------
 
  There are sevral methods to build a map, we will go through two methods Hector-SLAM and Gmapping_SLAM. Hector-SLAM is an algorithm that uses laser scan data to create a map. The advantage of Hector-SLAM over other SLAM techniques is that it only requires laser scan data to do its job. It doesn’t need odometry data., where Gmapping needs both laser scan and odometry data to build a map. 
 
@@ -265,10 +266,10 @@ Hector SLAM (Mapping using only laser scan data)
 
  Search for these lines **(lines 5 and 6 in my code)**
     - :code:`<arg name="base_frame" default="base_footprint"/>`
-    -:code:`<arg name="odom_frame" default="nav"/>`
+    - :code:`<arg name="odom_frame" default="nav"/>`
 
  Change those lines to this:
-    -:code:`<arg name="base_frame" default="base_link"/>`
+    - :code:`<arg name="base_frame" default="base_link"/>`
     - :code:`<arg name="odom_frame" default="base_link"/>`
 
  Now go to the end of this file, and find these lines **(line 54 in my code)**.
