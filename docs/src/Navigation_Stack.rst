@@ -460,6 +460,36 @@ And copy these line into the **yaml.file**
       height: 1.0
       resolution: 0.1
 
+Save and close the file.
+
+Base Local planner configuration 
+---------------------------------
+
+In addition to the costmap configurations we did in the previous section, we need to configure ROS Navigation Stack’s base_local_planner. The base_local_planner computes velocity commands that are sent to the robot base controller. The values that you use for your base_local_planner will depend on your robot.
+
+.. code-block::
+
+    TrajectoryPlannerROS:
+      max_vel_x: 0.12
+      min_vel_x: 0.11
+      #max_vel_theta: 1.0
+      #min_in_place_vel_theta: 0.4
+
+      #acc_lim_theta: 3.2
+      #acc_lim_x: 2.5
+      #acc_lim_y: 2.5
+
+      holonomic_robot: false
+      meter_scoring: true
+    xy_goal_tolerance: 0.15
+    yaw_goal_tolerance: 0.25
+
+Save and close the file.
+
+Move Base node
+----------------
+
+
 
 
 
