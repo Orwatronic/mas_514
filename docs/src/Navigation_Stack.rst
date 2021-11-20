@@ -498,6 +498,54 @@ Save and close the file.
 Move Base node
 ----------------
 
+Now that we have created our configuration files, we need to add them to the launch file. The configuration files will be used by ROS Navigation Stack’s  :code:`move_base node`. The move_base node is the work horse behind the scenes that is responsible for planning a collision-free path from a starting location to a goal location for a mobile robot.
+
+The move-base node subscribes to the following topics:
+    - /move_base_simple/goal :  Goal position and orientation :code:`(geometry_msgs::PoseStamped)`. The messag-es on this topic are generated using the goal button on RViz.
+
+The publisher will publish to the following topics:
+
+- /cmd_vel : Linear and angular velocity command :code:`(geometry_msgs/Twist Message)`
+
+Open a terminal window, and type:
+
+.. code-block:: 
+
+    $ cd ~/catkin_ws
+    $ roscd jetbot_nav
+    $ cd launch
+    $ gedit move_base.launch
+
+and copy these line into the move_base.launch file.
+
+.. code-block:: 
+
+    </launch>
+    <!-- Map File -->
+    <arg name="map_file" default="$(find jetbot_nav)/maps/map.yaml"/>
+    <!-- Map Server -->
+    <!-- Publish: /map, /map_metadata -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+    <!-- Add AMCL example for differential drive robots for Localization -->
+    <!-- Subscribe: /scan, /tf, /initialpose, /map -->
+    <!-- Publish: /amcl_pose, /particlecloud, /tf -->
+    <include file="$(find amcl)/examples/amcl_diff.launch"/>
+    <!-- Move Base Node -->
+    <!-- Subscribe: /move_base_simple/goal -->
+    <!-- Publish: /cmd_vel -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find jetbot_nav)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find jetbot_nav)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find jetbot_nav)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find jetbot_nav)/param/global_costmap_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find jetbot_nav)/param/base_local_planner_params.yaml" command="load" />
+     </node>
+     </launch>
+
+ Save and close the file.
+
+
+
 
 
 
