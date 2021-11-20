@@ -438,6 +438,31 @@ Let’s create a configuration file that will house parameters for the local cos
 
 Open a terminal window, and type:
 
+.. code-block::
+
+    $ cd ~/catkin_ws
+    $ roscd jetbot_nav
+     cd param
+    $ gedit local_costmap_params.yaml
+
+And copy these line into the **yaml.file**
+
+.. code-block::
+
+    local_costmap:
+      global_frame: odom
+      robot_base_frame: base_link
+      update_frequency: 30.0
+      publish_frequency: 30.0
+      static_map: false
+      rolling_window: true
+      width: 1.0
+      height: 1.0
+      resolution: 0.1
+
+
+
+
 
 
 
