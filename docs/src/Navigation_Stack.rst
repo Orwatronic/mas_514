@@ -421,6 +421,9 @@ Open a terminal window, and type:
 
 and copy these line into the yaml.file
 
+dsklfjasirfjasiofjaksd
+=======================
+
 .. code-block::
 
     global_costmap:
