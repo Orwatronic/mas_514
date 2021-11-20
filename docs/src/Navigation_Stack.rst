@@ -279,7 +279,7 @@ Change those lines to this (be sure to remove the comment tags (<!– and –>):
 Save the file, and return to the terminal window.
 
 Type the following command.
-    - :cod:`$ cd ~/catkin_ws/src/hector_slam/hector_slam_launch/launch`
+    - :code:`$ cd ~/catkin_ws/src/hector_slam/hector_slam_launch/launch`
 
 Open the tutorial.launch file.
     - :code:`$ gedit tutorial.launch`
@@ -298,6 +298,31 @@ Open a new terminal window, and type this command:
 **If you see this error message…**
 
 “”Project ‘cv_bridge’ specifies ‘/usr/include/opencv’ as an include dir, which is not found. It does neither exist as an absolute directory nor in…””
+    - :code:`$ cd /usr/include`
+    - :code:`$ sudo ln -s opencv4/ opencv`
+
+Build the packages again.
+    - :code:`$cd ~/catkin_ws/`
+    - :code:`$catkin_make`
+
+Shutdown then turn the Jetson Nano on again.
+    - :code:`$ sudo shutdown -h now`
+
+**Open a new terminal window, and launch RPLIDAR**
+    - :code:`$ cd ~/catkin_ws/`
+    - :code:`$sudo chmod 666 /dev/ttyUSB0`
+
+#. Mapping using Hector SLAM **(only needs laser scan data)**
+.. code-block::
+
+    1- $ roscore
+    2- $ rosrun tf static_transform_publisher 0 0 0 0 0 0 map scanmatcher_frame 10
+    3- $ rosrun tf static_transform_publisher 0.06 0 0.08 0 0 base_link camera_link 10
+    4- $ roslaunch jetbot_nav laser.launch
+    5- $ roslaunch hector_slam_launch tutorial.launch
+
+
+
 
 
 
