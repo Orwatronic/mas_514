@@ -421,9 +421,6 @@ Open a terminal window, and type:
 
 and copy these line into the yaml.file
 
-dsklfjasirfjasiofjaksd
-=======================
-
 .. code-block::
 
     global_costmap:
@@ -434,6 +431,12 @@ dsklfjasirfjasiofjaksd
 
 Save and close the file.
 
+Local configuration (local costmap)
+--------------------------------------
+
+Let’s create a configuration file that will house parameters for the local costmap. The name of this file will be **local_costmap_params.yaml**.
+
+Open a terminal window, and type:
 
 
 
