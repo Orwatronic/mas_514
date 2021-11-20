@@ -467,6 +467,15 @@ Base Local planner configuration
 
 In addition to the costmap configurations we did in the previous section, we need to configure ROS Navigation Stack’s base_local_planner. The base_local_planner computes velocity commands that are sent to the robot base controller. The values that you use for your base_local_planner will depend on your robot.
 
+.. code-block:: 
+
+    $ cd ~/catkin_ws
+    $ roscd jetbot_nav
+    $ cd param
+    $ gedit base_local_planner_params.yaml
+
+and copy these line into the **yam.file**.
+
 .. code-block::
 
     TrajectoryPlannerROS:
