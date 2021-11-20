@@ -325,7 +325,111 @@ Hector SLAM (Mapping using only laser scan data)
     5- $ roslaunch hector_slam_launch tutorial.launch
 
 #. Save the Map
-    1- install map server
+    1- Install map server
+        - :code:`$ sudo apt-get install ros-melodic-map-server`
+
+    2- Create maps folder to save your map in this directory
+        - :code:`$ mkdir ~/catkin_ws/src/mas514/maps`
+
+    3- launch mapping process in step 4
+        When you are happy with the map that you see in rviz, you can save the map as my_map.yaml and my_map.pgm. Open a new terminal
+
+    4- Navigate to maps directory
+        - :code:`$ cd ~/catkin_ws/src/mas514/maps`
+
+    5- Save the map in pgm and yaml format
+        - :code:`$ rosrun map_server map_saver -f  map`
+
+Gmapping-SLAM
+----------------
+
+If you did the setup for the tortlebot3 you should have a package called  turtlebot3 inside catkin_ws/src/turtlebot3
+In the launch folder turtlebot3_slam/launch there is a launch file called turtlebot3_gmapping.launch. we will use this file for Gmapping-SLAM, how ever we need to change line 5 from “base_footprint” to “base_link”
+
+And now it’s ready to be used. 
+
+In order to start mapping, run the following codes
+
+In new terminal
+        - :code:`$ roslaunch jetbot_nav jetbot.launch `
+
+In new terminal
+        - :code:`$ roslaunch jetbot_nav laser.launch`
+
+In new terminal 
+        - :code:`$ roslaunch jetbot_nav laser.launch`
+
+In new terminal
+        - :code:`$ export TURTLEBOT3_MODEL=burger`
+        - :code:`$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
+
+In new terminal 
+        - :code:`$ export TURTLEBOT3_MODEL=burger`
+        - :code:`$ roslaunch turtlebot3_slam turtlebot3_gmapping.launch`
+
+Move the jetbot around to draw the map slowly, and then save the map if the result is good enough. 
+
+After we done this, we will have the needed map to be used in the navigation stack.
+
+Costmap configuration (global and local costmap)
+--------------------------------------------------
+
+The ROS Navigation Stack uses two costmps to store information about obstacles in the world. 
+
+    #. **Global costmap:** This costmap is used to generate long term plans over the entire environment….for exam-ple, to calculate the shortest path from point A to point B on a map.
+    #. **Local costmap:** This costmap is used to generate short term plans over the environment….for example, to avoid obstacles.
+
+We have to configure these costmaps for our project. We set the configurations in yaml.files.
+
+**Common configuration (global and local costmap)**
+
+Let’s create a configuration file that will house parameters that are common to both the global and the local costmap. The name of this file will be **costmap_common_params.yaml**. 
+
+Open a terminal window, and type:
+
+        - :code:`$ roscd jetbot_nav`
+        - :code:`$ mkdir param`
+        - :code:`$ cd param`
+        - :code:`$ gedit costmap_common_params.yaml`
+
+and copy these line into the yaml.file
+
+.. code-block::
+
+    obstacle_range: 0.5
+    raytrace_range: 0.5
+    footprint: [[-0.06, -0.08], [-0.06, 0.08],[0.14, 0.08],[0.14, -0.08]]
+    #robot_radius: ir_of_robot
+    inflation_radius: 0.2
+    observation_sources: laser_scan_sensor 
+
+    laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+Save and close the file.
+
+**Global configuration (global costmap)**
+Let’s create a configuration file that will house parameters for the global costmap. The name of this file will be **global_costmap_params.yaml.**
+
+Open a terminal window, and type:
+
+.. code-block::
+
+    cd ~/catkin_ws
+    roscd navstack_pub
+    cd param
+    gedit global_costmap_params.yaml
+
+and copy these line into the yaml.file
+
+.. code-block::
+
+    global_costmap:
+    global_frame: odom
+    robot_base_frame: base_link
+    update_frequency: 30.0
+    static_map: true
+
+Save and close the file.
 
 
 
