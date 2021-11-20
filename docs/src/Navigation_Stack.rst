@@ -505,7 +505,7 @@ The move-base node subscribes to the following topics:
 
 The publisher will publish to the following topics:
 
-- /cmd_vel : Linear and angular velocity command :code:`(geometry_msgs/Twist Message)`
+    - /cmd_vel : Linear and angular velocity command :code:`(geometry_msgs/Twist Message)`
 
 Open a terminal window, and type:
 
@@ -542,15 +542,53 @@ and copy these line into the move_base.launch file.
      </node>
      </launch>
 
- Save and close the file.
+Save and close the file.
 
+As you can see in the move_base.launch file, we added the map that we  created using Hector ot Gmapping SLAM, and we added ACML node for the differential drive robot.
 
+Now everything is done and we can launch the navigation stack!
 
+First we build the packages to makes sure everything is ok, open terminal and run
 
+.. code-block:: 
 
+    $ cd ~/catkin_ws/
+    $ catkin_make --only-pkg-with-deps jetbot_nav
 
+Open new terminal and launch jetbot.launch , laser.launch and move_base.launch 
 
+.. code-block::
 
+    $ roslaunch jetbot_nav jetbot.launch 
+    $ roslaunch jetbot_nav laser.launch 
+    $ roslaunch jetbot_nav move_base.launch
 
+If necessary, set the topics for each of the RViz plugins so that you can see the axis of your robot on the screen along with the map and costmaps.
 
+Set the initial pose of the robot by clicking the **2D Pose Estimate** button at the top of RViz and then clicking on the map. 
 
+Give the robot a goal by clicking on the **2D Nav Goal button** at the top of RViz and then clicking on the map.
+
+You should see the planned path automatically drawn on the map. Your robot should then begin to follow this path.
+
+(pic for rviz and navigation)
+--------------------------------
+
+Open a new terminal, and see the tf tree.
+
+.. code-block::
+
+    $ rosrun tf view_frames
+    $ evince frames.pdf
+
+(pic for tf tree)
+--------------------
+
+Open a new terminal and see the node graph.
+
+:code:`$ rqt_graph`
+
+Pic for node graph
+--------------------
+
+**Thats it**
